@@ -7,6 +7,7 @@
   <style>
     body { font-family: Georgia, serif; background:#fff8f0; margin:0; color:#3b2f2f; line-height:1.6; }
     header { background:#8b5e3c; color:white; padding:2rem; text-align:center; }
+    header img { max-width:150px; display:block; margin:0 auto 1rem auto; border-radius:50%; }
     nav { background:#f2e2d2; display:flex; justify-content:center; gap:1.5rem; padding:1rem; flex-wrap:wrap; }
     nav a { text-decoration:none; color:#3b2f2f; font-weight:bold; padding:0.5rem 1rem; border-radius:50px; }
     .home-link { background:#6ca0dc; color:white; }
@@ -15,12 +16,14 @@
     section { max-width:900px; margin:2rem auto; padding:0 1rem; }
     .info-box { background:#ffffff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
     .order-button { background:#8b5e3c; color:white; border:none; padding:1rem 2rem; border-radius:8px; cursor:pointer; font-size:1.1rem; display:block; margin:2rem auto; text-align:center; text-decoration:none; }
+    .map-container { max-width:900px; margin:2rem auto; border-radius:8px; overflow:hidden; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
     footer { background:#8b5e3c; color:white; text-align:center; padding:1rem; margin-top:2rem; }
   </style>
 </head>
 <body>
 
   <header>
+    <img src="0b5d7b2e-13b1-488e-9e4a-fbb24b248171.png" alt="Nana B's Logo">
     <h1>Nana B's Country Kitchen</h1>
     <p>Comfort food with heart in Round Rock, Texas</p>
   </header>
@@ -39,30 +42,26 @@
   <section id="info">
     <h2>Hours & Contact Info</h2>
     <div class="info-box">
-      <h3>Holiday Hours</h3>
-      <p>Open December 24th and December 25th (Christmas Eve & Christmas Day)<br>Closed December 31st and January 1st (New Year’s Eve & New Year’s Day)</p>
-
-      <h3>Lunch</h3>
+      <p><strong>Address:</strong> 101 Limmer Loop Suite 100, Round Rock, TX 78665</p>
+      <p><strong>Phone:</strong> (512) 284-9583</p>
+      <h3>Hours:</h3>
       <ul>
-        <li>Monday – Friday: 11:00 AM – 2:00 PM</li>
-        <li>Saturday – Sunday: 11:30 AM – 3:00 PM</li>
+        <li>Saturday: 11 AM – 7 PM</li>
+        <li>Sunday: 12 PM – 4 PM</li>
+        <li>Monday: Closed</li>
+        <li>Tuesday: 11 AM – 7 PM</li>
+        <li>Wednesday: 11 AM – 7 PM</li>
+        <li>Thursday: 11 AM – 7 PM</li>
+        <li>Friday: 11 AM – 7 PM</li>
       </ul>
-
-      <h3>Dinner</h3>
-      <ul>
-        <li>Sunday – Thursday: 5:00 PM – 9:00 PM</li>
-        <li>Friday – Saturday: 5:00 PM – 10:00 PM</li>
-      </ul>
-
-      <p><strong>Phone:</strong> (512) 733-2233</p>
-      <p><strong>Address:</strong> 3720 Gattis School Rd. Suite 400, Round Rock, TX 78664</p>
     </div>
   </section>
-
-  <section id="order">
-    <h2>Order Online</h2>
-    <p>Click the button below to place your order online.</p>
-    <a class="order-button" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order Online Now</a>
+  
+  <section id="map">
+    <h2>Find Us Here</h2>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3450.8835602762967!2d-97.67836238487249!3d30.554295981797596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8644c9f3f2e2b69f%3A0x62a1a4dc52f98f3f!2s101%20Limmer%20Loop%20Suite%20100%2C%20Round%20Rock%2C%20TX%2078665!5e0!3m2!1sen!2sus!4v1706100000000!5m2!1sen!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
   </section>
 
   <footer>
