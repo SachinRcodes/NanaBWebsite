@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nana B's Country Kitchen</title>
   <style>
     body { font-family: Georgia, serif; background:#fff8f0; margin:0; color:#3b2f2f; line-height:1.6; }
@@ -11,9 +11,7 @@
     nav a { text-decoration:none; color:#3b2f2f; font-weight:bold; }
     section { max-width:900px; margin:2rem auto; padding:0 1rem; }
     .info-box { background:#ffffff; padding:1.5rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); }
-    .menu-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1.5rem; }
-    .menu-item { background:#ffffff; padding:1.25rem; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.1); text-align:center; }
-    button { background:#8b5e3c; color:white; border:none; padding:0.75rem 1.5rem; border-radius:6px; cursor:pointer; display:block; margin:1rem auto; }
+    .order-button { background:#8b5e3c; color:white; border:none; padding:1rem 2rem; border-radius:8px; cursor:pointer; font-size:1.1rem; display:block; margin:2rem auto; text-align:center; text-decoration:none; }
     footer { background:#8b5e3c; color:white; text-align:center; padding:1rem; margin-top:2rem; }
   </style>
 </head>
@@ -26,12 +24,6 @@
 
   <nav>
     <a href="index.html">Home</a>
-    <a href="plates.html">Plates</a>
-    <a href="burgers.html">Burgers</a>
-    <a href="wings.html">Wings</a>
-    <a href="seafood.html">Seafood</a>
-    <a href="sides.html">Sides</a>
-    <a href="desserts.html">Desserts & Drinks</a>
   </nav>
 
   <section id="about">
@@ -62,35 +54,10 @@
     </div>
   </section>
 
-  <section id="menu">
-    <h2>Order Online by Category</h2>
-    <p>Click a category to open it in a separate page for ordering.</p>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <strong>Plates & Specials</strong>
-        <a href="plates.html"><button>View Plates</button></a>
-      </div>
-      <div class="menu-item">
-        <strong>Burgers</strong>
-        <a href="burgers.html"><button>View Burgers</button></a>
-      </div>
-      <div class="menu-item">
-        <strong>Wings</strong>
-        <a href="wings.html"><button>View Wings</button></a>
-      </div>
-      <div class="menu-item">
-        <strong>Seafood</strong>
-        <a href="seafood.html"><button>View Seafood</button></a>
-      </div>
-      <div class="menu-item">
-        <strong>Sides</strong>
-        <a href="sides.html"><button>View Sides</button></a>
-      </div>
-      <div class="menu-item">
-        <strong>Desserts & Drinks</strong>
-        <a href="desserts.html"><button>View Desserts & Drinks</button></a>
-      </div>
-    </div>
+  <section id="order">
+    <h2>Order Online</h2>
+    <p>Click the button below to place your order online.</p>
+    <a class="order-button" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order Online Now</a>
   </section>
 
   <footer>
