@@ -5,7 +5,1290 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nana B's Country Kitchen</title>
   <style>
-    body { font-family: Georgia, serif; background:#fff8f0; margin:0; color:#3b2f2f; line-height:1.6; }
+    body { font-family: Georgia, serif; background:#fff8f0; margin<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Nana B's Country Kitchen | Round Rock, TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=Cabin:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   VARIABLES
+══════════════════════════════════════════ */
+:root{
+  --black:#0A0A0A;
+  --red:#E8151B;
+  --red-dk:#B01014;
+  --yellow:#FFD000;
+  --yellow-lt:#FFE55C;
+  --green:#1D7A3A;
+  --green-lt:#25A04C;
+  --white:#F5F5F0;
+  --gray:#1C1C1C;
+  --gray2:#2A2A2A;
+}
+
+/* ══════════════════════════════════════════
+   RESET
+══════════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:'Cabin',sans-serif;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+
+/* ══════════════════════════════════════════
+   TICKER
+══════════════════════════════════════════ */
+.ticker{
+  background:var(--red);
+  overflow:hidden;white-space:nowrap;
+  padding:9px 0;z-index:200;position:relative;
+}
+.ticker-inner{
+  display:inline-block;
+  animation:ticker 28s linear infinite;
+  font-family:'Bebas Neue',cursive;
+  font-size:.95rem;letter-spacing:.14em;color:var(--yellow);
+}
+.ticker-inner span{margin:0 36px;color:rgba(255,255,255,.7);}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ══════════════════════════════════════════
+   NAV — desktop + hamburger mobile
+══════════════════════════════════════════ */
+nav{
+  background:var(--black);
+  border-bottom:3px solid var(--yellow);
+  position:sticky;top:0;z-index:900;
+}
+.nav-wrap{
+  max-width:1200px;margin:0 auto;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  gap:12px;
+}
+.nav-logo{
+  font-family:'Permanent Marker',cursive;
+  font-size:1.4rem;color:var(--yellow);
+  text-decoration:none;
+  padding:14px 0;
+  text-shadow:2px 2px 0 var(--red);
+  white-space:nowrap;flex-shrink:0;
+}
+
+/* desktop tabs */
+.nav-tabs{
+  display:flex;gap:0;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.nav-tabs::-webkit-scrollbar{display:none;}
+.tab-btn{
+  background:none;border:none;
+  font-family:'Bebas Neue',cursive;
+  font-size:1rem;letter-spacing:.1em;
+  color:rgba(245,245,240,.55);
+  padding:18px 16px;
+  cursor:pointer;
+  border-bottom:3px solid transparent;
+  transition:color .2s,border-color .2s;
+  white-space:nowrap;
+  flex-shrink:0;
+}
+.tab-btn:hover{color:var(--yellow);}
+.tab-btn.active{color:var(--yellow);border-bottom-color:var(--yellow);}
+
+.nav-order{
+  background:var(--red);color:#fff;
+  font-family:'Bebas Neue',cursive;
+  font-size:.9rem;letter-spacing:.1em;
+  padding:9px 16px;border:none;border-radius:2px;
+  cursor:pointer;text-decoration:none;
+  display:inline-block;white-space:nowrap;flex-shrink:0;
+  transition:background .2s;
+}
+.nav-order:hover{background:var(--red-dk);}
+
+/* hamburger button — hidden on desktop */
+.hamburger{
+  display:none;
+  background:none;border:none;
+  cursor:pointer;padding:8px;
+  flex-direction:column;gap:5px;
+  flex-shrink:0;
+}
+.hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--yellow);
+  transition:transform .3s,opacity .3s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* mobile drawer */
+.mobile-menu{
+  display:none;
+  position:fixed;top:0;left:0;right:0;bottom:0;
+  background:var(--black);
+  z-index:800;
+  flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:8px;
+  padding:80px 24px 40px;
+}
+.mobile-menu.open{display:flex;}
+.mobile-menu .mob-tab{
+  background:none;border:none;
+  font-family:'Black Han Sans',sans-serif;
+  font-size:2.2rem;color:rgba(245,245,240,.7);
+  cursor:pointer;padding:10px 0;
+  width:100%;text-align:center;
+  border-bottom:1px solid rgba(255,255,255,.07);
+  transition:color .2s;
+}
+.mobile-menu .mob-tab:hover,.mobile-menu .mob-tab.active{color:var(--yellow);}
+.mobile-menu .mob-order{
+  margin-top:20px;
+  background:var(--red);color:#fff;
+  font-family:'Bebas Neue',cursive;
+  font-size:1.2rem;letter-spacing:.12em;
+  padding:16px 40px;text-decoration:none;
+  display:inline-block;border-radius:2px;
+  width:100%;text-align:center;
+}
+
+/* ══════════════════════════════════════════
+   PAGE SYSTEM
+══════════════════════════════════════════ */
+.page{display:none;}
+.page.active{display:block;}
+
+/* ══════════════════════════════════════════
+   SHARED HELPERS
+══════════════════════════════════════════ */
+.section-eyebrow{
+  font-family:'Bebas Neue',cursive;
+  font-size:.82rem;letter-spacing:.28em;
+  color:var(--green-lt);
+  margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green-lt);}
+.section-h2{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(1.8rem,6vw,3.6rem);
+  line-height:1;color:var(--white);margin-bottom:32px;
+}
+.section-h2 em{font-style:normal;color:var(--yellow);}
+.section-h2 .red{color:var(--red);}
+.btn-yellow{
+  background:var(--yellow);color:var(--black);
+  font-family:'Bebas Neue',cursive;
+  font-size:1.05rem;letter-spacing:.12em;
+  padding:13px 28px;border:none;border-radius:2px;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:background .2s,transform .15s;
+  -webkit-appearance:none;
+}
+.btn-yellow:hover{background:var(--yellow-lt);}
+.btn-outline-white{
+  background:transparent;color:var(--white);
+  font-family:'Bebas Neue',cursive;
+  font-size:1.05rem;letter-spacing:.12em;
+  padding:12px 28px;
+  border:2px solid rgba(245,245,240,.35);
+  border-radius:2px;
+  cursor:pointer;text-decoration:none;display:inline-block;
+  transition:border-color .2s,color .2s;
+}
+.btn-outline-white:hover{border-color:var(--yellow);color:var(--yellow);}
+
+/* ══════════════════════════════════════════
+   ██ HOME
+══════════════════════════════════════════ */
+.hero{
+  min-height:100svh;
+  background:var(--black);
+  display:flex;align-items:center;
+  position:relative;overflow:hidden;
+  padding:60px 20px 48px;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -45deg,transparent,transparent 60px,
+    rgba(255,208,0,.03) 60px,rgba(255,208,0,.03) 62px
+  );
+}
+.hero-colorblock{
+  position:absolute;right:0;top:0;bottom:0;width:40%;
+  background:var(--red);
+  clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);
+  z-index:0;
+}
+.hero-colorblock::after{
+  content:'';position:absolute;inset:0;
+  background:url('https://www.thechunkychef.com/wp-content/uploads/2020/06/Smash-Burger-Recipe-feat.jpg') center/cover no-repeat;
+  mix-blend-mode:multiply;opacity:.5;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;width:100%;
+  position:relative;z-index:2;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:32px;align-items:center;
+}
+.hero-eyebrow{
+  font-family:'Bebas Neue',cursive;
+  font-size:.82rem;letter-spacing:.28em;color:var(--green-lt);
+  margin-bottom:14px;display:flex;align-items:center;gap:10px;
+}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--green-lt);}
+.hero-h1{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(3.2rem,10vw,8rem);
+  line-height:.9;color:var(--white);margin-bottom:8px;
+}
+.hero-h1 .red{color:var(--red);}
+.hero-h1 .yellow{color:var(--yellow);}
+.hero-sub{
+  font-size:1rem;color:rgba(245,245,240,.7);
+  line-height:1.7;max-width:400px;margin:18px 0 32px;
+}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.hero-stat-stack{display:flex;flex-direction:column;gap:10px;width:100%;}
+.hero-stat{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,208,0,.2);
+  border-left:4px solid var(--yellow);
+  padding:16px 18px;border-radius:2px;
+}
+.hero-stat:nth-child(2){border-left-color:var(--red);}
+.hero-stat:nth-child(3){border-left-color:var(--green-lt);}
+.hero-stat .big{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:2.2rem;color:var(--yellow);
+}
+.hero-stat:nth-child(2) .big{color:var(--red);}
+.hero-stat:nth-child(3) .big{color:var(--green-lt);}
+.hero-stat .lbl{font-size:.78rem;color:rgba(245,245,240,.55);letter-spacing:.08em;text-transform:uppercase;}
+
+/* social strip */
+.social-strip{
+  background:var(--yellow);
+  padding:14px 20px;
+  display:flex;align-items:center;justify-content:center;
+  gap:20px;flex-wrap:wrap;
+}
+.social-strip a{
+  color:var(--black);
+  font-family:'Bebas Neue',cursive;
+  font-size:.92rem;letter-spacing:.12em;
+  text-decoration:none;display:flex;align-items:center;gap:6px;
+  transition:color .2s;
+}
+.social-strip a:hover{color:var(--red-dk);}
+.social-strip .div{color:rgba(0,0,0,.25);}
+
+/* features grid */
+.home-features{padding:64px 20px;max-width:1200px;margin:0 auto;}
+.feat-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:4px;
+}
+.feat-card{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;cursor:pointer;
+}
+.feat-card img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .5s;filter:brightness(.65) saturate(1.1);
+}
+.feat-card:hover img{transform:scale(1.07);filter:brightness(.45) saturate(1.3);}
+.feat-card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,transparent 55%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:18px;
+}
+.feat-card-tag{
+  font-family:'Bebas Neue',cursive;font-size:.72rem;
+  letter-spacing:.2em;color:var(--yellow);margin-bottom:4px;
+}
+.feat-card-name{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(1.1rem,3vw,1.6rem);color:var(--white);line-height:1;
+}
+.feat-card-hover{
+  position:absolute;inset:0;
+  background:rgba(232,21,27,.9);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;opacity:0;transition:opacity .3s;padding:18px;text-align:center;
+}
+.feat-card:hover .feat-card-hover{opacity:1;}
+.feat-card-hover p{font-size:.88rem;color:#fff;line-height:1.5;}
+.feat-card-hover .see-more{
+  font-family:'Bebas Neue',cursive;letter-spacing:.15em;font-size:.88rem;
+  color:var(--yellow);border:1px solid var(--yellow);
+  padding:8px 16px;cursor:pointer;background:none;
+  transition:background .2s,color .2s;
+}
+.feat-card-hover .see-more:hover{background:var(--yellow);color:var(--black);}
+
+/* big quote */
+.big-quote{
+  background:var(--red);padding:60px 20px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.big-quote::before{
+  content:'"';font-family:'Black Han Sans',sans-serif;
+  font-size:20rem;color:rgba(0,0,0,.1);
+  position:absolute;top:-60px;left:50%;transform:translateX(-50%);
+  line-height:1;pointer-events:none;
+}
+.big-quote blockquote{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(1.4rem,4.5vw,2.8rem);
+  color:var(--white);max-width:800px;margin:0 auto 16px;
+  line-height:1.2;position:relative;z-index:1;
+}
+.big-quote cite{
+  font-family:'Bebas Neue',cursive;font-size:.88rem;
+  letter-spacing:.2em;color:var(--yellow);font-style:normal;
+}
+
+/* order strip */
+.order-strip{
+  background:var(--green);padding:44px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:20px;
+}
+.order-strip-text h3{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(1.5rem,4vw,2.6rem);color:var(--white);line-height:1;
+}
+.order-strip-text p{color:rgba(255,255,255,.7);font-size:.95rem;margin-top:6px;}
+.order-strip-btns{display:flex;gap:12px;flex-wrap:wrap;}
+
+/* ══════════════════════════════════════════
+   ██ MENU
+══════════════════════════════════════════ */
+.menu-hero{
+  background:var(--gray);padding:60px 20px 44px;text-align:center;
+  border-bottom:4px solid var(--yellow);position:relative;overflow:hidden;
+}
+.menu-hero::after{
+  content:'MENU';font-family:'Black Han Sans',sans-serif;font-size:12rem;
+  color:rgba(255,208,0,.04);position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
+}
+.menu-hero h1{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(2.6rem,9vw,5.5rem);color:var(--white);position:relative;z-index:1;
+}
+.menu-hero h1 span{color:var(--yellow);}
+.menu-hero p{color:rgba(245,245,240,.6);margin-top:10px;font-size:.9rem;position:relative;z-index:1;line-height:1.6;}
+
+.menu-wrap{max-width:1100px;margin:0 auto;padding:48px 20px;}
+.menu-photo-banner{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:40px;
+}
+.menu-photo-banner img{width:100%;height:150px;object-fit:cover;filter:brightness(.8) saturate(1.2);transition:filter .3s;}
+.menu-photo-banner img:hover{filter:brightness(1) saturate(1.4);}
+
+.menu-section{margin-bottom:48px;}
+.menu-section-title{
+  font-family:'Black Han Sans',sans-serif;font-size:1.7rem;color:var(--yellow);
+  border-bottom:2px solid var(--gray2);padding-bottom:10px;margin-bottom:20px;
+  display:flex;align-items:center;gap:10px;
+}
+.menu-section-title .icon{font-size:1.4rem;}
+.menu-items{display:grid;grid-template-columns:1fr;gap:3px;}
+.menu-item{
+  background:var(--gray2);padding:18px 20px;
+  border-left:3px solid transparent;
+  transition:border-color .2s,background .2s;
+  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
+}
+.menu-item:hover,.menu-item:active{border-left-color:var(--red);background:#222;}
+.menu-item h4{
+  font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.06em;
+  color:var(--white);margin-bottom:4px;
+}
+.menu-item p{font-size:.83rem;color:rgba(245,245,240,.5);line-height:1.5;}
+.menu-item .price{
+  font-family:'Black Han Sans',sans-serif;font-size:1.05rem;
+  color:var(--yellow);white-space:nowrap;flex-shrink:0;
+}
+.menu-special-badge{
+  background:var(--red);color:#fff;
+  font-family:'Bebas Neue',cursive;font-size:.68rem;letter-spacing:.1em;
+  padding:2px 7px;border-radius:2px;display:inline-block;
+  margin-left:6px;vertical-align:middle;
+}
+.menu-online-cta{
+  background:var(--green);padding:36px 20px;text-align:center;margin-top:48px;
+}
+.menu-online-cta h3{
+  font-family:'Black Han Sans',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:10px;
+}
+.menu-online-cta p{color:rgba(255,255,255,.75);margin-bottom:22px;font-size:.95rem;}
+
+/* ══════════════════════════════════════════
+   ██ GALLERY
+══════════════════════════════════════════ */
+.gallery-hero{
+  background:var(--green);padding:60px 20px 100px;text-align:center;
+  clip-path:polygon(0 0,100% 0,100% 82%,0 100%);margin-bottom:-30px;
+}
+.gallery-hero h1{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(2.6rem,9vw,5.5rem);color:var(--yellow);
+}
+.gallery-hero p{color:rgba(255,255,255,.8);margin-top:10px;font-size:.95rem;}
+.gallery-wrap{max-width:1200px;margin:0 auto;padding:60px 20px 48px;}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:4px;
+}
+.gallery-item{
+  position:relative;overflow:hidden;cursor:pointer;
+  aspect-ratio:1;
+}
+.gallery-item.tall{aspect-ratio:2/3;}
+.gallery-item img{
+  width:100%;height:100%;object-fit:cover;
+  filter:brightness(.7) saturate(1.2);
+  transition:filter .4s,transform .5s;
+}
+.gallery-item:hover img{filter:brightness(1) saturate(1.5);transform:scale(1.05);}
+.gallery-item-cap{
+  position:absolute;bottom:0;left:0;right:0;
+  background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);
+  padding:18px 14px 12px;
+}
+.gallery-item-cap span{
+  font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.1em;color:var(--yellow);
+}
+.gallery-ig-strip{
+  background:var(--red);padding:48px 20px;text-align:center;margin-top:16px;
+}
+.gallery-ig-strip h3{
+  font-family:'Black Han Sans',sans-serif;font-size:2rem;color:var(--white);margin-bottom:10px;
+}
+.gallery-ig-strip p{color:rgba(255,255,255,.8);margin-bottom:22px;font-size:.95rem;}
+
+/* ══════════════════════════════════════════
+   ██ ABOUT
+══════════════════════════════════════════ */
+.about-hero{
+  background:var(--black);min-height:auto;
+  padding:64px 20px;
+  border-bottom:4px solid var(--red);
+  position:relative;overflow:hidden;
+}
+.about-hero::before{
+  content:'NANA B';font-family:'Black Han Sans',sans-serif;font-size:10rem;
+  color:rgba(232,21,27,.06);position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
+}
+.about-hero-inner{
+  max-width:1200px;margin:0 auto;position:relative;z-index:1;
+  display:flex;flex-direction:column;gap:32px;
+}
+.about-hero h1{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(2.4rem,8vw,5rem);color:var(--white);line-height:.95;margin-bottom:20px;
+}
+.about-hero h1 em{font-style:normal;color:var(--red);}
+.about-hero p{color:rgba(245,245,240,.7);line-height:1.8;font-size:1rem;margin-bottom:14px;}
+.about-colorbox{
+  background:var(--yellow);padding:28px 24px;
+  font-family:'Permanent Marker',cursive;font-size:1.3rem;color:var(--black);line-height:1.4;
+  transform:rotate(-1.2deg);box-shadow:6px 6px 0 var(--red);
+  margin:8px 0;
+}
+.about-values{background:var(--gray);padding:60px 20px;}
+.about-values-inner{max-width:1100px;margin:0 auto;}
+.values-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:32px;
+}
+.value-card{
+  background:var(--gray2);padding:24px 20px;
+  border-top:4px solid transparent;transition:border-color .2s,background .2s;
+}
+.value-card:nth-child(1){border-top-color:var(--red);}
+.value-card:nth-child(2){border-top-color:var(--yellow);}
+.value-card:nth-child(3){border-top-color:var(--green-lt);}
+.value-card:nth-child(4){border-top-color:var(--red);}
+.value-card .vc-icon{font-size:1.8rem;margin-bottom:10px;}
+.value-card h3{
+  font-family:'Black Han Sans',sans-serif;font-size:1.15rem;color:var(--white);margin-bottom:8px;
+}
+.value-card p{font-size:.83rem;color:rgba(245,245,240,.5);line-height:1.6;}
+
+.about-owners{
+  padding:60px 20px;max-width:1100px;margin:0 auto;
+  display:flex;flex-direction:column;gap:32px;
+}
+.owner-block h2{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(2rem,6vw,3.2rem);color:var(--white);line-height:1;margin-bottom:18px;
+}
+.owner-block h2 em{font-style:normal;color:var(--green-lt);}
+.owner-block p{color:rgba(245,245,240,.7);line-height:1.8;font-size:.98rem;margin-bottom:12px;}
+.owner-img-stack{position:relative;}
+.owner-img-stack .img-main{
+  width:100%;aspect-ratio:16/9;object-fit:cover;filter:brightness(.8) saturate(1.1);
+}
+
+/* ══════════════════════════════════════════
+   ██ CONNECT / VISIT
+══════════════════════════════════════════ */
+.connect-hero{
+  background:var(--yellow);padding:60px 20px 100px;text-align:center;
+  clip-path:polygon(0 0,100% 0,100% 85%,0 100%);margin-bottom:-30px;
+}
+.connect-hero h1{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(2.6rem,9vw,5.5rem);color:var(--black);
+}
+.connect-hero p{color:rgba(0,0,0,.65);font-size:.95rem;margin-top:8px;}
+.connect-wrap{max-width:1100px;margin:0 auto;padding:60px 20px;}
+.connect-grid{
+  display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:48px;
+}
+.info-card{background:var(--gray2);padding:28px;border-bottom:4px solid var(--yellow);}
+.info-card h3{
+  font-family:'Black Han Sans',sans-serif;font-size:1.3rem;color:var(--yellow);margin-bottom:14px;
+}
+.info-card p,.info-card a{
+  color:rgba(245,245,240,.75);font-size:.95rem;line-height:1.7;text-decoration:none;display:block;
+}
+.info-card a:hover{color:var(--yellow);}
+.hours-row{
+  display:flex;justify-content:space-between;padding:8px 0;
+  border-bottom:1px solid rgba(255,255,255,.07);font-size:.88rem;
+}
+.hours-row .day{color:var(--white);font-weight:700;}
+.hours-row .time{color:rgba(245,245,240,.55);}
+.hours-row.closed .time{color:var(--red);}
+.platform-links{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:48px;
+}
+.platform-card{
+  padding:28px 16px;text-align:center;text-decoration:none;display:block;
+  transition:transform .2s,opacity .2s;position:relative;overflow:hidden;
+}
+.platform-card:hover,.platform-card:active{transform:translateY(-3px);opacity:.9;}
+.platform-card.fb{background:#1877F2;}
+.platform-card.ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
+.platform-card.yelp{background:#D32323;}
+.platform-card.order{background:var(--green);}
+.platform-card.map{background:#4285F4;}
+.platform-card .plat-icon{font-size:2rem;display:block;margin-bottom:10px;}
+.platform-card h4{
+  font-family:'Black Han Sans',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:4px;
+}
+.platform-card p{font-size:.78rem;color:rgba(255,255,255,.75);}
+.map-embed{
+  width:100%;height:280px;background:var(--gray2);
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  gap:14px;text-align:center;
+  border:2px dashed rgba(255,208,0,.2);border-radius:2px;
+}
+.map-embed .map-icon{font-size:3rem;}
+.map-embed p{color:rgba(245,245,240,.6);font-size:.88rem;line-height:1.6;}
+.map-embed a{
+  background:var(--yellow);color:var(--black);
+  font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;
+  padding:12px 26px;text-decoration:none;display:inline-block;
+}
+
+/* ══════════════════════════════════════════
+   ██ ORDER PAGE
+══════════════════════════════════════════ */
+.order-page-hero{
+  background:var(--red);padding:70px 20px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.order-page-hero::before{
+  content:'ORDER';font-family:'Black Han Sans',sans-serif;font-size:12rem;
+  color:rgba(0,0,0,.1);position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
+}
+.order-page-hero h1{
+  font-family:'Black Han Sans',sans-serif;
+  font-size:clamp(3rem,10vw,6rem);color:var(--yellow);position:relative;z-index:1;
+}
+.order-page-hero p{
+  color:rgba(255,255,255,.85);font-size:1rem;margin-top:12px;
+  position:relative;z-index:1;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6;
+}
+.order-wrap{max-width:900px;margin:0 auto;padding:60px 20px;}
+.order-options{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:48px;}
+.order-option{
+  background:var(--gray2);padding:36px 24px;text-align:center;
+  border:2px solid transparent;transition:border-color .2s;
+  cursor:pointer;text-decoration:none;display:block;
+}
+.order-option:hover,.order-option:active{border-color:var(--yellow);}
+.order-option .oo-icon{font-size:2.6rem;display:block;margin-bottom:14px;}
+.order-option h3{
+  font-family:'Black Han Sans',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:8px;
+}
+.order-option p{color:rgba(245,245,240,.55);font-size:.88rem;line-height:1.6;margin-bottom:18px;}
+.order-option .oo-btn{
+  background:var(--yellow);color:var(--black);
+  font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;
+  padding:10px 22px;display:inline-block;
+}
+.order-option.phone .oo-btn{background:var(--green);color:#fff;}
+.order-note{
+  background:rgba(255,208,0,.08);border:1px solid rgba(255,208,0,.2);
+  padding:20px 24px;margin-bottom:36px;border-radius:2px;
+}
+.order-note p{color:rgba(245,245,240,.7);font-size:.88rem;line-height:1.7;}
+.order-note strong{color:var(--yellow);}
+
+/* ══════════════════════════════════════════
+   STICKY MOBILE ORDER BAR
+══════════════════════════════════════════ */
+.sticky-order-bar{
+  display:none;
+  position:fixed;bottom:0;left:0;right:0;
+  z-index:700;
+  display:grid;grid-template-columns:1fr 1fr;
+  box-shadow:0 -4px 20px rgba(0,0,0,.5);
+}
+.sticky-order-bar a{
+  padding:16px 12px;text-align:center;text-decoration:none;
+  font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.sticky-order-bar .sob-order{background:var(--red);color:var(--yellow);}
+.sticky-order-bar .sob-call{background:var(--green);color:#fff;}
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer{
+  background:var(--gray);border-top:4px solid var(--red);
+  padding:44px 20px 100px; /* bottom padding for sticky bar */
+}
+.footer-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:32px;margin-bottom:32px;
+}
+.footer-brand .f-logo{
+  font-family:'Permanent Marker',cursive;font-size:1.8rem;color:var(--yellow);
+  text-shadow:2px 2px 0 var(--red);display:block;margin-bottom:10px;
+}
+.footer-brand p{color:rgba(245,245,240,.45);font-size:.83rem;line-height:1.7;}
+.footer-col h4{
+  font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.18em;
+  color:var(--yellow);margin-bottom:12px;
+}
+.footer-col a,.footer-col p{
+  color:rgba(245,245,240,.45);font-size:.84rem;line-height:2;
+  text-decoration:none;display:block;transition:color .2s;
+}
+.footer-col a:hover{color:var(--yellow);}
+.footer-bottom{
+  text-align:center;border-top:1px solid rgba(255,255,255,.07);
+  padding-top:20px;color:rgba(245,245,240,.25);font-size:.76rem;
+}
+.footer-bottom span{color:var(--red);}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+══════════════════════════════════════════ */
+
+/* ── 768px and up — restore some two-col layouts */
+@media(min-width:768px){
+  .hamburger{display:none !important;}
+  .nav-tabs{display:flex !important;}
+  .mobile-menu{display:none !important;}
+  .hero-inner{grid-template-columns:1fr 1fr;}
+  .hero-colorblock{display:block;}
+  .about-hero-inner{flex-direction:row;align-items:center;}
+  .about-owners{flex-direction:row;align-items:center;}
+  .owner-img-stack .img-main{aspect-ratio:4/5;}
+  .connect-grid{grid-template-columns:1fr 1fr;}
+  .order-options{grid-template-columns:1fr 1fr;}
+  .menu-items{grid-template-columns:repeat(2,1fr);}
+  .menu-photo-banner{grid-template-columns:repeat(4,1fr);}
+  .values-grid{grid-template-columns:repeat(4,1fr);}
+  .platform-links{grid-template-columns:repeat(5,1fr);}
+  .gallery-grid{grid-template-columns:repeat(3,1fr);}
+  .footer-inner{grid-template-columns:1fr 1fr 1fr;}
+  .sticky-order-bar{display:none;}
+  footer{padding-bottom:44px;}
+}
+
+/* ── under 768px — hamburger nav */
+@media(max-width:767px){
+  .hamburger{display:flex;}
+  .nav-tabs{display:none;}
+  .nav-order{display:none;}
+  .hero-colorblock{display:none;}
+  .hero-inner{grid-template-columns:1fr;}
+  .hero-stat-stack{display:none;}
+  .hero{min-height:85svh;padding:48px 20px 40px;}
+  .hero-h1{font-size:clamp(3.5rem,14vw,6rem);}
+  .feat-grid{grid-template-columns:1fr 1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .order-strip{flex-direction:column;text-align:center;}
+  .order-strip-btns{justify-content:center;}
+  .social-strip{gap:12px;}
+  .social-strip .div{display:none;}
+  .sticky-order-bar{display:grid;}
+  footer{padding-bottom:90px;}
+  .footer-inner{grid-template-columns:1fr;gap:24px;}
+}
+
+/* ── extra small phones */
+@media(max-width:380px){
+  .hero-h1{font-size:3rem;}
+  .nav-logo{font-size:1.2rem;}
+  .feat-card-name{font-size:1rem;}
+  .values-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ TICKER ══════════════════════════════════ -->
+<div class="ticker">
+  <div class="ticker-inner">
+    🔥 EVERYTHING SCRATCH-MADE · NOTHING FROZEN <span>✦</span>
+    📍 101 LIMMER LOOP STE 100, ROUND ROCK TX <span>✦</span>
+    📞 (512) 284-9583 <span>✦</span>
+    🕐 TUE–SAT 11AM–7PM · SUN 12PM–4PM <span>✦</span>
+    🍔 BBQ SATURDAY &amp; SOUL FOOD SUNDAY <span>✦</span>
+    ❤️ COME HUNGRY, LEAVE HAPPY <span>✦</span>
+    🔥 EVERYTHING SCRATCH-MADE · NOTHING FROZEN <span>✦</span>
+    📍 101 LIMMER LOOP STE 100, ROUND ROCK TX <span>✦</span>
+    📞 (512) 284-9583 <span>✦</span>
+    🕐 TUE–SAT 11AM–7PM · SUN 12PM–4PM <span>✦</span>
+    🍔 BBQ SATURDAY &amp; SOUL FOOD SUNDAY <span>✦</span>
+    ❤️ COME HUNGRY, LEAVE HAPPY <span>✦</span>
+  </div>
+</div>
+
+<!-- ══ NAV ══════════════════════════════════════ -->
+<nav>
+  <div class="nav-wrap">
+    <a class="nav-logo" href="#" onclick="showTab('home');return false;">Nana B's</a>
+
+    <!-- desktop tabs -->
+    <div class="nav-tabs">
+      <button class="tab-btn active" onclick="showTab('home')">Home</button>
+      <button class="tab-btn" onclick="showTab('menu')">Menu</button>
+      <button class="tab-btn" onclick="showTab('gallery')">Gallery</button>
+      <button class="tab-btn" onclick="showTab('about')">Our Story</button>
+      <button class="tab-btn" onclick="showTab('connect')">Visit Us</button>
+      <button class="tab-btn" onclick="showTab('order')">Order</button>
+    </div>
+
+    <a class="nav-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order Online ↗</a>
+
+    <!-- hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══ MOBILE DRAWER ════════════════════════════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mob-tab active" onclick="showTab('home');closeMobile()">Home</button>
+  <button class="mob-tab" onclick="showTab('menu');closeMobile()">Menu</button>
+  <button class="mob-tab" onclick="showTab('gallery');closeMobile()">Gallery</button>
+  <button class="mob-tab" onclick="showTab('about');closeMobile()">Our Story</button>
+  <button class="mob-tab" onclick="showTab('connect');closeMobile()">Visit Us</button>
+  <button class="mob-tab" onclick="showTab('order');closeMobile()">Order</button>
+  <a class="mob-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order Online on Zenfoody ↗</a>
+</div>
+
+<!-- ══ STICKY MOBILE ORDER BAR ═════════════════ -->
+<div class="sticky-order-bar">
+  <a class="sob-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">🍽️ Order Online</a>
+  <a class="sob-call" href="tel:5122849583">📞 Call Us</a>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  HOME                                   ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="page-home" class="page active">
+
+  <section class="hero">
+    <div class="hero-colorblock"></div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-eyebrow">Round Rock, Texas · Est. 2025</div>
+        <h1 class="hero-h1">
+          <span class="yellow">NANA</span><br>
+          <span class="red">B'S</span><br>
+          COUNTRY<br>KITCHEN
+        </h1>
+        <p class="hero-sub">Scratch-made comfort food from cherished family recipes. Bold flavors, zero shortcuts, all love.</p>
+        <div class="hero-btns">
+          <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order Online ↗</a>
+          <button class="btn-outline-white" onclick="showTab('menu')">See The Menu</button>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="hero-stat-stack">
+          <div class="hero-stat">
+            <div class="big">100%</div>
+            <div class="lbl">Scratch-Made · Nothing Frozen</div>
+          </div>
+          <div class="hero-stat">
+            <div class="big">0</div>
+            <div class="lbl">Frozen Ingredients. Ever.</div>
+          </div>
+          <div class="hero-stat">
+            <div class="big">∞</div>
+            <div class="lbl">Made With Love, Every Plate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-strip">
+    <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank">📘 Facebook</a>
+    <span class="div">|</span>
+    <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank">📷 Instagram</a>
+    <span class="div">|</span>
+    <a href="https://www.yelp.com/biz/nana-bs-country-kitchen-round-rock-2" target="_blank">⭐ Yelp</a>
+    <span class="div">|</span>
+    <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">🍽️ Order Now</a>
+  </div>
+
+  <section class="home-features">
+    <div class="section-eyebrow">What We Serve</div>
+    <h2 class="section-h2">Soul Food Done <em>Right.</em><br>No Shortcuts. <span class="red">No Excuses.</span></h2>
+    <div class="feat-grid">
+      <div class="feat-card">
+        <img src="https://www.thechunkychef.com/wp-content/uploads/2020/06/Smash-Burger-Recipe-feat.jpg" alt="Smash Burger" onerror="this.style.background='#333'">
+        <div class="feat-card-overlay">
+          <div class="feat-card-tag">Signature</div>
+          <div class="feat-card-name">Smash Burger</div>
+        </div>
+        <div class="feat-card-hover">
+          <p>Victor's secret sauce, crispy caramelized edges, comes with fries.</p>
+          <button class="see-more" onclick="showTab('menu')">See Menu</button>
+        </div>
+      </div>
+      <div class="feat-card">
+        <img src="https://houseofnasheats.com/wp-content/uploads/2019/06/Crispy-Fried-Catfish-4.jpg" alt="Fried Catfish" onerror="this.style.background='#333'">
+        <div class="feat-card-overlay">
+          <div class="feat-card-tag">Classic</div>
+          <div class="feat-card-name">Fried Catfish</div>
+        </div>
+        <div class="feat-card-hover">
+          <p>Golden cornmeal-crusted Southern catfish fried to perfection.</p>
+          <button class="see-more" onclick="showTab('menu')">See Menu</button>
+        </div>
+      </div>
+      <div class="feat-card">
+        <img src="https://www.africanbites.com/wp-content/uploads/2016/11/beef-tips-3.jpg" alt="Beef Tips" onerror="this.style.background='#333'">
+        <div class="feat-card-overlay">
+          <div class="feat-card-tag">Daily Special</div>
+          <div class="feat-card-name">Beef Tips & Rice</div>
+        </div>
+        <div class="feat-card-hover">
+          <p>Slow-braised beef tips in savory gravy over fluffy rice. Every day.</p>
+          <button class="see-more" onclick="showTab('menu')">See Menu</button>
+        </div>
+      </div>
+      <div class="feat-card">
+        <img src="https://thecookierookie.com/wp-content/uploads/2023/01/banana-pudding-recipe-3.jpg" alt="Banana Pudding" onerror="this.style.background='#333'">
+        <div class="feat-card-overlay">
+          <div class="feat-card-tag">Must Try</div>
+          <div class="feat-card-name">Banana Pudding</div>
+        </div>
+        <div class="feat-card-hover">
+          <p>Keysha's mom's legendary family recipe. Worth the drive alone.</p>
+          <button class="see-more" onclick="showTab('menu')">See Menu</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="big-quote">
+    <blockquote>"Everything is made with love. It's not just food — it's a whole vibe."</blockquote>
+    <cite>— Keysha Nichols-Friar, Co-Owner</cite>
+  </div>
+
+  <div class="order-strip">
+    <div class="order-strip-text">
+      <h3>Ready to Eat?<br>Order Online Now.</h3>
+      <p>Dine-in · Takeout · Delivery · All Scratch-Made</p>
+    </div>
+    <div class="order-strip-btns">
+      <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order on Zenfoody ↗</a>
+      <a href="tel:5122849583" class="btn-outline-white">Call Us</a>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  MENU                                   ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="page-menu" class="page">
+  <div class="menu-hero">
+    <h1>THE <span>MENU</span></h1>
+    <p>Everything scratch-made · Specials rotate daily · Follow us on social for surprises</p>
+  </div>
+  <div class="menu-wrap">
+    <div class="menu-photo-banner">
+      <img src="https://www.thechunkychef.com/wp-content/uploads/2020/06/Smash-Burger-Recipe-feat.jpg" alt="Smash Burger" onerror="this.style.background='#333'">
+      <img src="https://houseofnasheats.com/wp-content/uploads/2019/06/Crispy-Fried-Catfish-4.jpg" alt="Catfish" onerror="this.style.background='#333'">
+      <img src="https://www.africanbites.com/wp-content/uploads/2016/11/beef-tips-3.jpg" alt="Beef Tips" onerror="this.style.background='#333'">
+      <img src="https://thecookierookie.com/wp-content/uploads/2023/01/banana-pudding-recipe-3.jpg" alt="Banana Pudding" onerror="this.style.background='#333'">
+    </div>
+
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🍔</span> Mains &amp; Plates</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Smash Burger &amp; Fries</h4><p>Double smash patty, Victor's special sauce, American cheese, lettuce, tomato</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Fried Catfish</h4><p>Cornmeal-crusted Southern fried catfish, tartar sauce, two sides</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Smothered Steak</h4><p>Tender steak in rich onion &amp; mushroom gravy with sides</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Stuffed Turkey Legs <span class="menu-special-badge">House Special</span></h4><p>Jumbo turkey legs stuffed with savory seasoned filling</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Victor's Special Wings</h4><p>Crispy fried wings, Victor's seasoning, choice of sauce</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Beef Tips over Rice <span class="menu-special-badge">Daily</span></h4><p>Slow-braised beef tips in savory gravy over fluffy white rice</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Fried Pork Chops</h4><p>Golden Southern-fried pork chops, family recipe seasoning, two sides</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Oxtails</h4><p>Slow-braised oxtails in hearty gravy, tender &amp; falling off the bone</p></div><div class="price">Market</div></div>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🌶️</span> Snacks &amp; Specials</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Deep Fried Burrito</h4><p>Crispy fried burrito smothered in chili and cheese</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Frito Pie</h4><p>Classic Frito pie with hearty chili, cheese &amp; all the fixings</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Loaded Fries</h4><p>Crispy fries piled with cheese, chili, jalapeños &amp; sour cream</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Fried Rice</h4><p>Savory house-fried rice with vegetables &amp; choice of protein</p></div><div class="price">Market</div></div>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🔥</span> BBQ Saturday &amp; Soul Food Sunday</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>BBQ Saturday <span class="menu-special-badge">Sat Only</span></h4><p>Rotating smoked meats, ribs &amp; links. Follow social for the weekly menu.</p></div><div class="price">Weekly</div></div>
+        <div class="menu-item"><div><h4>Soul Food Sunday <span class="menu-special-badge">Sun Only</span></h4><p>Classic soul food spread. Hours: 12pm–4pm.</p></div><div class="price">Weekly</div></div>
+      </div>
+    </div>
+
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🍮</span> Desserts</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Keysha's Banana Pudding <span class="menu-special-badge">Famous</span></h4><p>Keysha's mother's cherished family recipe. Creamy &amp; unforgettable.</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Family Recipe Pies</h4><p>Rotating homemade pies baked fresh. Ask what's available today.</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Homemade Cakes</h4><p>Layer cakes from scratch using treasured family recipes.</p></div><div class="price">Market</div></div>
+      </div>
+    </div>
+
+    <div class="menu-online-cta">
+      <h3>View Full Menu &amp; Order Online</h3>
+      <p>Full interactive menu with daily specials on Zenfoody. Order for pickup or delivery.</p>
+      <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Open Menu on Zenfoody ↗</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  GALLERY                                ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="page-gallery" class="page">
+  <div class="gallery-hero">
+    <h1>FOOD GALLERY</h1>
+    <p>All scratch-made · All day long · All love</p>
+  </div>
+  <div class="gallery-wrap">
+    <div class="section-eyebrow">Fresh from the Kitchen</div>
+    <h2 class="section-h2">Every Dish Tells a <em>Story.</em></h2>
+    <div class="gallery-grid">
+      <div class="gallery-item tall">
+        <img src="https://www.thechunkychef.com/wp-content/uploads/2020/06/Smash-Burger-Recipe-feat.jpg" alt="Smash Burger" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Smash Burger</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://houseofnasheats.com/wp-content/uploads/2019/06/Crispy-Fried-Catfish-4.jpg" alt="Fried Catfish" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Fried Catfish</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://thecookierookie.com/wp-content/uploads/2023/01/banana-pudding-recipe-3.jpg" alt="Banana Pudding" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Banana Pudding</span></div>
+      </div>
+      <div class="gallery-item tall">
+        <img src="https://www.africanbites.com/wp-content/uploads/2016/11/beef-tips-3.jpg" alt="Beef Tips" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Beef Tips &amp; Rice</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://i2.wp.com/www.downshiftology.com/wp-content/uploads/2019/07/Chicken-Wings-13.jpg" alt="Victor's Wings" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Victor's Wings</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.thespruceeats.com/thmb/UWJDM8LJJJyZWBzGMBGECmUBFI8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/SouthernFriedPorkChops-5a7e0d78a18d9e00377b86fd.jpg" alt="Fried Pork Chops" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Fried Pork Chops</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.seriouseats.com/thmb/MjSFLpC8L5jUKIGmJxnVbFxpH_M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20231004-SEA-OxtailRecipe-Amanda-Suarez-hero-4697e88ab13e4f64b7c80db4c18ea3fe.jpg" alt="Oxtails" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Braised Oxtails</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.thecountrycook.net/wp-content/uploads/2024/08/overhead-view-of-a-platter-of-smothered-pork-chops-garnished-with-fresh-parsley.jpg" alt="Smothered Steak" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Smothered Steak</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-ig-strip">
+    <h3>See More on Instagram</h3>
+    <p>Daily specials, behind-the-scenes cooking &amp; food shots posted every week.</p>
+    <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank" class="btn-yellow">Follow @nanabscountrykitchen ↗</a>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  ABOUT                                  ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="page-about" class="page">
+  <div class="about-hero">
+    <div class="about-hero-inner">
+      <div>
+        <h1>More Than<br><em>Just Food.</em></h1>
+        <p>Nana B's Country Kitchen was born from love — love for family, love for food, and love for the memories made around a table full of great cooking.</p>
+        <p>Owners Victor Friar and Keysha Nichols-Friar dedicated the restaurant to both of their mothers. Every dish on the menu carries their families' love.</p>
+        <p>Not a single ingredient comes frozen. Not a single shortcut is taken. Everything is scratch-made from treasured family recipes.</p>
+      </div>
+      <div>
+        <div class="about-colorbox">
+          "Come hungry, leave happy. That's the promise we make every single day we open these doors."
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="about-values">
+    <div class="about-values-inner">
+      <div class="section-eyebrow">What We Stand For</div>
+      <h2 class="section-h2">Our <em>Values</em></h2>
+      <div class="values-grid">
+        <div class="value-card"><div class="vc-icon">🔥</div><h3>100% Scratch-Made</h3><p>Every sauce, side, and dessert made fresh. Nothing frozen. Ever.</p></div>
+        <div class="value-card"><div class="vc-icon">❤️</div><h3>Made with Love</h3><p>Every recipe is a tribute to two families. Every plate crafted with care.</p></div>
+        <div class="value-card"><div class="vc-icon">🏠</div><h3>Family First</h3><p>Not a chain — a family feeding the community, one plate at a time.</p></div>
+        <div class="value-card"><div class="vc-icon">✨</div><h3>The Whole Vibe</h3><p>"It's not just food — it's a whole vibe." An experience, not just a meal.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="about-owners">
+    <div class="owner-block">
+      <h2>Victor &amp; Keysha<br><em>Friar</em></h2>
+      <p>Victor and Keysha Friar bring two family traditions under one roof. Victor brings his legendary wings recipe and signature special sauce. Keysha carries her mother's dessert legacy — especially that unforgettable banana pudding.</p>
+      <p>Together they've built a place where food is a celebration of where they came from and a gift to the Round Rock community.</p>
+      <p>The name "Nana B" is a tribute to both of their mothers — the women who started it all.</p>
+      <div style="margin-top:24px;">
+        <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" class="btn-yellow">Follow Our Journey ↗</a>
+      </div>
+    </div>
+    <div class="owner-img-stack">
+      <img class="img-main" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Restaurant kitchen" onerror="this.style.background='#333'">
+    </div>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  CONNECT / VISIT                        ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="page-connect" class="page">
+  <div class="connect-hero">
+    <h1>FIND US</h1>
+    <p>Come hungry — we'll take care of the rest.</p>
+  </div>
+  <div class="connect-wrap">
+    <div class="connect-grid">
+      <div class="info-card">
+        <h3>📍 Location &amp; Contact</h3>
+        <p>101 Limmer Loop, Suite 100<br>Round Rock / Hutto, TX 78665</p>
+        <br>
+        <a href="tel:5122849583">(512) 284-9583</a>
+        <a href="tel:5127367774">(512) 736-7774</a>
+        <br>
+        <p>Dine-In · Takeout · Delivery</p>
+      </div>
+      <div class="info-card">
+        <h3>🕐 Hours</h3>
+        <div class="hours-row closed"><span class="day">Monday</span><span class="time">Closed</span></div>
+        <div class="hours-row"><span class="day">Tuesday</span><span class="time">11AM – 7PM</span></div>
+        <div class="hours-row"><span class="day">Wednesday</span><span class="time">11AM – 7PM</span></div>
+        <div class="hours-row"><span class="day">Thursday</span><span class="time">11AM – 7PM</span></div>
+        <div class="hours-row"><span class="day">Friday</span><span class="time">11AM – 7PM</span></div>
+        <div class="hours-row"><span class="day">Saturday 🔥</span><span class="time">11AM – 7PM</span></div>
+        <div class="hours-row"><span class="day">Sunday 🍛</span><span class="time">12PM – 4PM</span></div>
+      </div>
+    </div>
+
+    <div class="section-eyebrow" style="margin-bottom:14px;">Find Us Everywhere</div>
+    <h2 class="section-h2" style="margin-bottom:20px;">Connect &amp; <em>Order</em></h2>
+    <div class="platform-links">
+      <a class="platform-card order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">
+        <span class="plat-icon">🍽️</span><h4>Order Online</h4><p>Full menu on Zenfoody</p>
+      </a>
+      <a class="platform-card fb" href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank">
+        <span class="plat-icon">📘</span><h4>Facebook</h4><p>Daily specials &amp; updates</p>
+      </a>
+      <a class="platform-card ig" href="https://www.instagram.com/nanabscountrykitchen/" target="_blank">
+        <span class="plat-icon">📷</span><h4>Instagram</h4><p>Food photos &amp; BTS</p>
+      </a>
+      <a class="platform-card yelp" href="https://www.yelp.com/biz/nana-bs-country-kitchen-round-rock-2" target="_blank">
+        <span class="plat-icon">⭐</span><h4>Yelp</h4><p>Reviews &amp; ratings</p>
+      </a>
+      <a class="platform-card map" href="https://maps.google.com/?q=101+Limmer+Loop+Suite+100+Hutto+TX" target="_blank">
+        <span class="plat-icon">📍</span><h4>Google Maps</h4><p>Get directions</p>
+      </a>
+    </div>
+
+    <div class="map-embed">
+      <div class="map-icon">📍</div>
+      <p><strong style="color:var(--white)">101 Limmer Loop, Suite 100</strong><br>Round Rock / Hutto, TX 78665</p>
+      <a href="https://maps.google.com/?q=101+Limmer+Loop+Suite+100+Hutto+TX" target="_blank">Get Directions ↗</a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ╔══════════════════════════════════════════╗
+     ║  ORDER                                  ║
+     ╚══════════════════════════════════════════╝ -->
+<div id="page-order" class="page">
+  <div class="order-page-hero">
+    <h1>ORDER UP.</h1>
+    <p>Scratch-made comfort food ready when you are. Pickup, dine in, or delivery.</p>
+  </div>
+  <div class="order-wrap">
+    <div class="order-note">
+      <p><strong>Daily specials change!</strong> Follow us on <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" style="color:var(--yellow)">Facebook</a> and <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank" style="color:var(--yellow)">Instagram</a> for today's menu. BBQ Saturday and Soul Food Sunday menus announced weekly.</p>
+    </div>
+    <div class="order-options">
+      <a class="order-option" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">
+        <span class="oo-icon">🍽️</span>
+        <h3>Order Online</h3>
+        <p>Browse our full menu and place an order through Zenfoody. Easy, fast, ready for pickup or delivery.</p>
+        <span class="oo-btn">Order on Zenfoody ↗</span>
+      </a>
+      <a class="order-option phone" href="tel:5122849583">
+        <span class="oo-icon">📞</span>
+        <h3>Call to Order</h3>
+        <p>Prefer to call? Reach us at (512) 284-9583. Great for large orders, specials questions, or catering.</p>
+        <span class="oo-btn">Call (512) 284-9583</span>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:16px;">
+      <div class="section-eyebrow" style="justify-content:center;margin-bottom:14px;">Also Find Us On</div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+        <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" class="btn-yellow">Facebook ↗</a>
+        <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank" class="btn-outline-white">Instagram ↗</a>
+        <a href="https://www.yelp.com/biz/nana-bs-country-kitchen-round-rock-2" target="_blank" class="btn-outline-white">Yelp ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══ FOOTER ════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="f-logo">Nana B's</span>
+      <p>Scratch-made comfort food from cherished family recipes. Nothing frozen, nothing rushed — just honest, hearty cooking.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <a href="#" onclick="showTab('home');return false;">Home</a>
+      <a href="#" onclick="showTab('menu');return false;">Menu</a>
+      <a href="#" onclick="showTab('gallery');return false;">Gallery</a>
+      <a href="#" onclick="showTab('about');return false;">Our Story</a>
+      <a href="#" onclick="showTab('connect');return false;">Visit Us</a>
+      <a href="#" onclick="showTab('order');return false;">Order</a>
+    </div>
+    <div class="footer-col">
+      <h4>Find Us</h4>
+      <p>101 Limmer Loop, Suite 100</p>
+      <p>Round Rock / Hutto, TX 78665</p>
+      <a href="tel:5122849583">(512) 284-9583</a>
+      <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order on Zenfoody ↗</a>
+      <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank">Facebook ↗</a>
+      <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank">Instagram ↗</a>
+      <a href="https://www.yelp.com/biz/nana-bs-country-kitchen-round-rock-2" target="_blank">Yelp ↗</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2025 Nana B's Country Kitchen · All Rights Reserved · Made with <span>❤️</span> in Round Rock, TX
+  </div>
+</footer>
+
+
+<script>
+// ── HAMBURGER
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+  document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+});
+function closeMobile() {
+  hamburger.classList.remove('open');
+  mobileMenu.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// ── TAB SYSTEM
+const tabIds = ['home','menu','gallery','about','connect','order'];
+function showTab(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.mob-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  const idx = tabIds.indexOf(id);
+  if(idx > -1){
+    document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+    document.querySelectorAll('.mob-tab')[idx].classList.add('active');
+  }
+  // scroll to top of nav
+  const navTop = document.querySelector('nav').getBoundingClientRect().top + window.scrollY;
+  window.scrollTo({top: navTop - 1, behavior: 'smooth'});
+}
+
+// ── hide cursor on touch devices
+if('ontouchstart' in window){
+  const c = document.querySelector('.cursor');
+  if(c) c.style.display = 'none';
+}
+</script>
+</body>
+</html>:0; color:#3b2f2f; line-height:1.6; }
     header { background:#8b5e3c; color:white; padding:2rem; text-align:center; }
     header img { max-width:150px; display:block; margin:0 auto 1rem auto; border-radius:50%; }
     nav { background:#f2e2d2; display:flex; justify-content:center; gap:1.5rem; padding:1rem; flex-wrap:wrap; }
