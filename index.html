@@ -428,6 +428,14 @@ nav{
   padding:2px 7px;border-radius:2px;display:inline-block;
   margin-left:6px;vertical-align:middle;
 }
+.menu-note{
+  background:rgba(255,208,0,.07);
+  border-left:3px solid var(--yellow);
+  padding:10px 14px;margin-bottom:14px;
+  font-size:.82rem;color:rgba(245,245,240,.6);line-height:1.6;
+  border-radius:0 2px 2px 0;
+}
+.menu-note strong{color:var(--yellow);}
 .menu-online-cta{
   background:var(--green);padding:36px 20px;text-align:center;margin-top:48px;
 }
@@ -671,7 +679,6 @@ nav{
   display:flex;align-items:center;justify-content:center;gap:8px;
 }
 .sticky-order-bar .sob-order{background:var(--red);color:var(--yellow);}
-.sticky-order-bar .sob-call{background:var(--green);color:#fff;}
 
 /* ══════════════════════════════════════════
    FOOTER
@@ -768,13 +775,11 @@ footer{
   <div class="ticker-inner">
     🔥 EVERYTHING SCRATCH-MADE · NOTHING FROZEN <span>✦</span>
     📍 101 LIMMER LOOP STE 100, ROUND ROCK TX <span>✦</span>
-    📞 (512) 284-9583 <span>✦</span>
     🕐 TUE–SAT 11AM–7PM · SUN 12PM–4PM <span>✦</span>
     🍔 BBQ SATURDAY &amp; SOUL FOOD SUNDAY <span>✦</span>
     ❤️ COME HUNGRY, LEAVE HAPPY <span>✦</span>
     🔥 EVERYTHING SCRATCH-MADE · NOTHING FROZEN <span>✦</span>
     📍 101 LIMMER LOOP STE 100, ROUND ROCK TX <span>✦</span>
-    📞 (512) 284-9583 <span>✦</span>
     🕐 TUE–SAT 11AM–7PM · SUN 12PM–4PM <span>✦</span>
     🍔 BBQ SATURDAY &amp; SOUL FOOD SUNDAY <span>✦</span>
     ❤️ COME HUNGRY, LEAVE HAPPY <span>✦</span>
@@ -784,7 +789,9 @@ footer{
 <!-- ══ NAV ══════════════════════════════════════ -->
 <nav>
   <div class="nav-wrap">
-    <a class="nav-logo" href="#" onclick="showTab('home');return false;">Nana B's</a>
+    <a class="nav-logo" href="#" onclick="showTab('home');return false;">
+      <img src="logo.png" alt="Nana B's Country Kitchen" style="height:42px;width:auto;display:block;">
+    </a>
 
     <!-- desktop tabs -->
     <div class="nav-tabs">
@@ -817,9 +824,8 @@ footer{
 </div>
 
 <!-- ══ STICKY MOBILE ORDER BAR ═════════════════ -->
-<div class="sticky-order-bar">
-  <a class="sob-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">🍽️ Order Online</a>
-  <a class="sob-call" href="tel:5122849583">📞 Call Us</a>
+<div class="sticky-order-bar" style="grid-template-columns:1fr;">
+  <a class="sob-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">🍽️ Order Online — Zenfoody</a>
 </div>
 
 
@@ -841,7 +847,6 @@ footer{
         <p class="hero-sub">Scratch-made comfort food from cherished family recipes. Bold flavors, zero shortcuts, all love.</p>
         <div class="hero-btns">
           <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order Online ↗</a>
-          <button class="btn-outline-white" onclick="showTab('menu')">See The Menu</button>
         </div>
       </div>
       <div class="hero-right">
@@ -900,13 +905,13 @@ footer{
         </div>
       </div>
       <div class="feat-card">
-        <img src="beef-tips-rice.png" alt="Beef Tips" onerror="this.style.background='#333'">
+        <img src="oxtail-quesadilla.png" alt="Oxtail Quesadilla" onerror="this.style.background='#333'">
         <div class="feat-card-overlay">
-          <div class="feat-card-tag">Daily Special</div>
-          <div class="feat-card-name">Beef Tips & Rice</div>
+          <div class="feat-card-tag">Specialty</div>
+          <div class="feat-card-name">Oxtail Quesadillas</div>
         </div>
         <div class="feat-card-hover">
-          <p>Slow-braised beef tips in savory gravy over fluffy rice. Every day.</p>
+          <p>Braised oxtail stuffed quesadillas served with 2 sides. A Nana B's original.</p>
           <button class="see-more" onclick="showTab('menu')">See Menu</button>
         </div>
       </div>
@@ -936,7 +941,6 @@ footer{
     </div>
     <div class="order-strip-btns">
       <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order on Zenfoody ↗</a>
-      <a href="tel:5122849583" class="btn-outline-white">Call Us</a>
     </div>
   </div>
 
@@ -949,61 +953,140 @@ footer{
 <div id="page-menu" class="page">
   <div class="menu-hero">
     <h1>THE <span>MENU</span></h1>
-    <p>Everything scratch-made · Specials rotate daily · Follow us on social for surprises</p>
+    <p>Entree + 2 Sides + Cornbread · Add a drink to any meal for $2 · Order online at Zenfoody</p>
   </div>
   <div class="menu-wrap">
+
     <div class="menu-photo-banner">
       <img src="smash-burger.png" alt="Smash Burger" onerror="this.style.background='#333'">
       <img src="fried-catfish.png" alt="Catfish" onerror="this.style.background='#333'">
-      <img src="beef-tips-rice.png" alt="Beef Tips" onerror="this.style.background='#333'">
+      <img src="chicken-wings.png" alt="Wings" onerror="this.style.background='#333'">
       <img src="banana-pudding.png" alt="Banana Pudding" onerror="this.style.background='#333'">
     </div>
 
+    <!-- ENTREES -->
     <div class="menu-section">
-      <div class="menu-section-title"><span class="icon">🍔</span> Mains &amp; Plates</div>
+      <div class="menu-section-title"><span class="icon">🍽️</span> Entrees <span style="font-size:.85rem;color:rgba(245,245,240,.45);font-family:'Cabin',sans-serif;font-weight:400;letter-spacing:0">— includes 2 sides + cornbread</span></div>
+      <div class="menu-note">Add a drink to any meal for <strong>$2</strong></div>
       <div class="menu-items">
-        <div class="menu-item"><div><h4>Smash Burger &amp; Fries</h4><p>Double smash patty, Victor's special sauce, American cheese, lettuce, tomato</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Fried Catfish</h4><p>Cornmeal-crusted Southern fried catfish, tartar sauce, two sides</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Smothered Steak</h4><p>Tender steak in rich onion &amp; mushroom gravy with sides</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Stuffed Turkey Legs <span class="menu-special-badge">House Special</span></h4><p>Jumbo turkey legs stuffed with savory seasoned filling</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Victor's Special Wings</h4><p>Crispy fried wings, Victor's seasoning, choice of sauce</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Beef Tips over Rice <span class="menu-special-badge">Daily</span></h4><p>Slow-braised beef tips in savory gravy over fluffy white rice</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Fried Pork Chops</h4><p>Golden Southern-fried pork chops, family recipe seasoning, two sides</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Oxtails</h4><p>Slow-braised oxtails in hearty gravy, tender &amp; falling off the bone</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Fried Catfish</h4><p>Golden Southern-fried catfish, scratch-made</p></div><div class="price">$18.99</div></div>
+        <div class="menu-item"><div><h4>Catfish Nuggets</h4><p>Bite-sized fried catfish nuggets</p></div><div class="price">$18.99</div></div>
+        <div class="menu-item"><div><h4>Fried Pork Chop</h4><p>Golden-fried pork chop with family recipe seasoning</p></div><div class="price">$18.99</div></div>
+        <div class="menu-item"><div><h4>Smothered Pork Chop</h4><p>Tender pork chop in rich savory gravy</p></div><div class="price">$18.99</div></div>
+        <div class="menu-item"><div><h4>Chicken Fried Chicken</h4><p>Crispy Southern-style fried chicken breast</p></div><div class="price">$18.99</div></div>
+        <div class="menu-item"><div><h4>Pan Seared Chicken Breast</h4><p>Juicy pan-seared chicken breast, scratch-seasoned</p></div><div class="price">$18.99</div></div>
       </div>
     </div>
 
+    <!-- BURGERS -->
     <div class="menu-section">
-      <div class="menu-section-title"><span class="icon">🌶️</span> Snacks &amp; Specials</div>
+      <div class="menu-section-title"><span class="icon">🍔</span> Burgers + Fries</div>
+      <div class="menu-note">All burgers come with lettuce, tomato, pickles, onion, jalapeño · Choice of mayo, mustard, or ketchup · Add chili +$2 · Add bacon +$1</div>
       <div class="menu-items">
-        <div class="menu-item"><div><h4>Deep Fried Burrito</h4><p>Crispy fried burrito smothered in chili and cheese</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Frito Pie</h4><p>Classic Frito pie with hearty chili, cheese &amp; all the fixings</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Loaded Fries</h4><p>Crispy fries piled with cheese, chili, jalapeños &amp; sour cream</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Fried Rice</h4><p>Savory house-fried rice with vegetables &amp; choice of protein</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Smashburger</h4><p>2 thin beef patties with cheese</p></div><div class="price">$11.99</div></div>
+        <div class="menu-item"><div><h4>Chicken Burger</h4><p>Fried or grilled chicken breast</p></div><div class="price">$14.99</div></div>
       </div>
     </div>
 
+    <!-- SANDWICHES -->
     <div class="menu-section">
-      <div class="menu-section-title"><span class="icon">🔥</span> BBQ Saturday &amp; Soul Food Sunday</div>
+      <div class="menu-section-title"><span class="icon">🥪</span> Sandwiches + Fries</div>
+      <div class="menu-note">Dressed with coleslaw, special mayo &amp; pickles</div>
       <div class="menu-items">
-        <div class="menu-item"><div><h4>BBQ Saturday <span class="menu-special-badge">Sat Only</span></h4><p>Rotating smoked meats, ribs &amp; links. Follow social for the weekly menu.</p></div><div class="price">Weekly</div></div>
-        <div class="menu-item"><div><h4>Soul Food Sunday <span class="menu-special-badge">Sun Only</span></h4><p>Classic soul food spread. Hours: 12pm–4pm.</p></div><div class="price">Weekly</div></div>
+        <div class="menu-item"><div><h4>Fried Catfish Sandwich</h4><p>Crispy catfish on a dressed bun with fries</p></div><div class="price">$14.99</div></div>
+        <div class="menu-item"><div><h4>Fried Pork Chop Sandwich</h4><p>Fried pork chop on a dressed bun with fries</p></div><div class="price">$14.99</div></div>
       </div>
     </div>
 
+    <!-- WINGS -->
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🍗</span> Wings + Fries</div>
+      <div class="menu-note">Flavors: BBQ · Buffalo · Lemon Pepper · Sweet Chili · Nana B's Signature Sweet BBQ</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>6 Count Wings</h4><p>Choice of flavor, served with fries</p></div><div class="price">$13.99</div></div>
+        <div class="menu-item"><div><h4>8 Count Wings</h4><p>Choice of flavor, served with fries</p></div><div class="price">$15.99</div></div>
+        <div class="menu-item"><div><h4>10 Count Wings</h4><p>Choice of flavor, served with fries</p></div><div class="price">$17.99</div></div>
+      </div>
+    </div>
+
+    <!-- SALADS -->
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🥗</span> Salads</div>
+      <div class="menu-note">Shredded iceberg lettuce, tomatoes, cucumbers &amp; boiled eggs · Dressings: Balsamic Parmesan Vinaigrette · Ranch · Add grilled or fried chicken breast +$4</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Entree Salad</h4><p>Full-size salad with your choice of dressing</p></div><div class="price">$8.99</div></div>
+        <div class="menu-item"><div><h4>Side Salad</h4><p>Smaller salad, perfect as a side</p></div><div class="price">$4.99</div></div>
+      </div>
+    </div>
+
+    <!-- NANA B'S SPECIALTIES -->
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">⭐</span> Nana B's Specialties</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Oxtail Quesadillas <span class="menu-special-badge">Fan Fave</span></h4><p>Oxtail quesadillas served with 2 sides</p></div><div class="price">$16.99</div></div>
+        <div class="menu-item"><div><h4>Oxtail Chimichanga</h4><p>Crispy chimichanga stuffed with braised oxtail</p></div><div class="price">$19.99</div></div>
+        <div class="menu-item"><div><h4>Chicken Chimichanga</h4><p>Crispy chimichanga stuffed with seasoned chicken</p></div><div class="price">$19.99</div></div>
+        <div class="menu-item"><div><h4>Oxtail Plate <span class="menu-special-badge">Sat &amp; Sun Only</span></h4><p>1 lb smoked oxtails on a bed of rice with 2 sides</p></div><div class="price">$31.99</div></div>
+      </div>
+    </div>
+
+    <!-- ALL THINGS CHILI -->
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🌶️</span> All Things Chili</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Deep Fried Burrito</h4><p>Crispy fried burrito smothered in chili, cheese &amp; onion</p></div><div class="price">$16.99</div></div>
+        <div class="menu-item"><div><h4>Frito Pie</h4><p>Fritos topped with chili, cheese &amp; onion</p></div><div class="price">$10.99</div></div>
+        <div class="menu-item"><div><h4>Loaded Fries</h4><p>Fries loaded with chili and cheese</p></div><div class="price">$8.99</div></div>
+        <div class="menu-item"><div><h4>Bowl of Chili</h4><p>Hearty scratch-made chili in a bowl</p></div><div class="price">$6.99</div></div>
+      </div>
+    </div>
+
+    <!-- SIDES -->
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">🫘</span> Sides</div>
+      <div class="menu-note">À la carte sides</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Mashed Potatoes + Gravy</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Mac + Cheese</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Green Beans</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Yams</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Sweet Carrots</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Tater Tots</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Fries</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Side Salad</h4></div><div class="price">$4.15</div></div>
+        <div class="menu-item"><div><h4>Collard Greens</h4></div><div class="price">$5.00</div></div>
+        <div class="menu-item"><div><h4>Braised Cabbage</h4></div><div class="price">$5.00</div></div>
+        <div class="menu-item"><div><h4>Dirty Rice</h4></div><div class="price">$5.00</div></div>
+        <div class="menu-item"><div><h4>Loaded Fries</h4></div><div class="price">$8.99</div></div>
+      </div>
+    </div>
+
+    <!-- KIDS -->
+    <div class="menu-section">
+      <div class="menu-section-title"><span class="icon">👦</span> Kids + Side</div>
+      <div class="menu-items">
+        <div class="menu-item"><div><h4>Smashburger</h4><p>Single patty with cheese, served with a side</p></div><div class="price">$8.99</div></div>
+        <div class="menu-item"><div><h4>Catfish Nuggets</h4><p>Kids portion, served with a side</p></div><div class="price">$8.99</div></div>
+        <div class="menu-item"><div><h4>Chicken Tenders</h4><p>Crispy tenders, served with a side</p></div><div class="price">$8.99</div></div>
+        <div class="menu-item"><div><h4>Corndog</h4><p>Classic corndog, served with a side</p></div><div class="price">$8.99</div></div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🍮</span> Desserts</div>
       <div class="menu-items">
-        <div class="menu-item"><div><h4>Keysha's Banana Pudding <span class="menu-special-badge">Famous</span></h4><p>Keysha's mother's cherished family recipe. Creamy &amp; unforgettable.</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Family Recipe Pies</h4><p>Rotating homemade pies baked fresh. Ask what's available today.</p></div><div class="price">Market</div></div>
-        <div class="menu-item"><div><h4>Homemade Cakes</h4><p>Layer cakes from scratch using treasured family recipes.</p></div><div class="price">Market</div></div>
+        <div class="menu-item"><div><h4>Banana Pudding <span class="menu-special-badge">Famous</span></h4><p>Keysha's mom's cherished family recipe</p></div><div class="price">$4.99</div></div>
+        <div class="menu-item"><div><h4>Pound Cake (Slice)</h4><p>Scratch-made pound cake by the slice</p></div><div class="price">Ask us</div></div>
+        <div class="menu-item"><div><h4>Sock It to Me Cake (Slice)</h4><p>Classic Southern favorite by the slice</p></div><div class="price">Ask us</div></div>
+        <div class="menu-item"><div><h4>Cookies</h4><p>Scratch-made cookies</p></div><div class="price">$2.00 each</div></div>
       </div>
     </div>
 
     <div class="menu-online-cta">
-      <h3>View Full Menu &amp; Order Online</h3>
-      <p>Full interactive menu with daily specials on Zenfoody. Order for pickup or delivery.</p>
-      <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Open Menu on Zenfoody ↗</a>
+      <h3>Order Online — No Phone Orders</h3>
+      <p>Orders are placed exclusively through Zenfoody. No phone orders accepted.</p>
+      <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order on Zenfoody ↗</a>
     </div>
   </div>
 </div>
@@ -1023,7 +1106,7 @@ footer{
     <div class="gallery-grid">
       <div class="gallery-item tall">
         <img src="smash-burger.png" alt="Smash Burger" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Smash Burger</span></div>
+        <div class="gallery-item-cap"><span>Smashburger</span></div>
       </div>
       <div class="gallery-item">
         <img src="fried-catfish.png" alt="Fried Catfish" onerror="this.style.background='#222'">
@@ -1034,24 +1117,24 @@ footer{
         <div class="gallery-item-cap"><span>Banana Pudding</span></div>
       </div>
       <div class="gallery-item tall">
-        <img src="beef-tips-rice.png" alt="Beef Tips" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Beef Tips &amp; Rice</span></div>
+        <img src="oxtail-quesadilla.png" alt="Oxtail Quesadilla" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Oxtail Quesadillas</span></div>
       </div>
       <div class="gallery-item">
-        <img src="chicken-wings.png" alt="Victor's Wings" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Victor's Wings</span></div>
+        <img src="chicken-wings.png" alt="Wings" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Wings + Fries</span></div>
       </div>
       <div class="gallery-item">
         <img src="fried-pork-chops.png" alt="Fried Pork Chops" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Fried Pork Chops</span></div>
+        <div class="gallery-item-cap"><span>Fried Pork Chop</span></div>
       </div>
       <div class="gallery-item">
-        <img src="oxtails.png" alt="Oxtails" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Braised Oxtails</span></div>
+        <img src="loaded-fries.png" alt="Loaded Fries" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Loaded Fries</span></div>
       </div>
       <div class="gallery-item">
-        <img src="smothered-steak.png" alt="Smothered Steak" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Smothered Steak</span></div>
+        <img src="oxtail-chimichanga.png" alt="Oxtail Chimichanga" onerror="this.style.background='#222'">
+        <div class="gallery-item-cap"><span>Oxtail Chimichanga</span></div>
       </div>
     </div>
   </div>
@@ -1125,9 +1208,6 @@ footer{
         <h3>📍 Location &amp; Contact</h3>
         <p>101 Limmer Loop, Suite 100<br>Round Rock / Hutto, TX 78665</p>
         <br>
-        <a href="tel:5122849583">(512) 284-9583</a>
-        <a href="tel:5127367774">(512) 736-7774</a>
-        <br>
         <p>Dine-In · Takeout · Delivery</p>
       </div>
       <div class="info-card">
@@ -1183,18 +1263,12 @@ footer{
     <div class="order-note">
       <p><strong>Daily specials change!</strong> Follow us on <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" style="color:var(--yellow)">Facebook</a> and <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank" style="color:var(--yellow)">Instagram</a> for today's menu. BBQ Saturday and Soul Food Sunday menus announced weekly.</p>
     </div>
-    <div class="order-options">
+    <div class="order-options" style="grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto;">
       <a class="order-option" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">
         <span class="oo-icon">🍽️</span>
         <h3>Order Online</h3>
-        <p>Browse our full menu and place an order through Zenfoody. Easy, fast, ready for pickup or delivery.</p>
+        <p>Browse our full menu and place an order through Zenfoody. Easy, fast, ready for pickup or delivery. No phone orders accepted.</p>
         <span class="oo-btn">Order on Zenfoody ↗</span>
-      </a>
-      <a class="order-option phone" href="tel:5122849583">
-        <span class="oo-icon">📞</span>
-        <h3>Call to Order</h3>
-        <p>Prefer to call? Reach us at (512) 284-9583. Great for large orders, specials questions, or catering.</p>
-        <span class="oo-btn">Call (512) 284-9583</span>
       </a>
     </div>
     <div style="text-align:center;margin-top:16px;">
@@ -1213,7 +1287,7 @@ footer{
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="f-logo">Nana B's</span>
+      <img src="logo.png" alt="Nana B's Country Kitchen" style="height:56px;width:auto;display:block;margin-bottom:12px;">
       <p>Scratch-made comfort food from cherished family recipes. Nothing frozen, nothing rushed — just honest, hearty cooking.</p>
     </div>
     <div class="footer-col">
@@ -1229,7 +1303,6 @@ footer{
       <h4>Find Us</h4>
       <p>101 Limmer Loop, Suite 100</p>
       <p>Round Rock / Hutto, TX 78665</p>
-      <a href="tel:5122849583">(512) 284-9583</a>
       <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order on Zenfoody ↗</a>
       <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank">Facebook ↗</a>
       <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank">Instagram ↗</a>
