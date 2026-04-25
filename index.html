@@ -6,11 +6,13 @@
 <title>Nana B's Country Kitchen | Round Rock, TX</title>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Bebas+Neue&family=Cabin:wght@400;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
 <style>
-/* ══════════════════════════════════════════
-   VARIABLES
-══════════════════════════════════════════ */
 :root{
   --black:#0A0A0A;
+  --brown-dk:#3B1F0E;
+  --brown:#6B3A1F;
+  --brown-md:#8B4E2A;
+  --brown-lt:#C17A45;
+  --brown-warm:#D4956A;
   --red:#E8151B;
   --red-dk:#B01014;
   --yellow:#FFD000;
@@ -18,716 +20,242 @@
   --green:#1D7A3A;
   --green-lt:#25A04C;
   --white:#F5F5F0;
+  --cream:#FDF6EC;
   --gray:#1C1C1C;
   --gray2:#2A2A2A;
 }
-
-/* ══════════════════════════════════════════
-   RESET
-══════════════════════════════════════════ */
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 html{scroll-behavior:smooth;}
-body{
-  background:var(--black);
-  color:var(--white);
-  font-family:'Cabin',sans-serif;
-  overflow-x:hidden;
-}
+body{background:var(--brown-dk);color:var(--white);font-family:'Cabin',sans-serif;overflow-x:hidden;}
 img{max-width:100%;display:block;}
 a{color:inherit;}
 
-/* ══════════════════════════════════════════
-   TICKER
-══════════════════════════════════════════ */
-.ticker{
-  background:var(--red);
-  overflow:hidden;white-space:nowrap;
-  padding:9px 0;z-index:200;position:relative;
-}
-.ticker-inner{
-  display:inline-block;
-  animation:ticker 28s linear infinite;
-  font-family:'Bebas Neue',cursive;
-  font-size:.95rem;letter-spacing:.14em;color:var(--yellow);
-}
-.ticker-inner span{margin:0 36px;color:rgba(255,255,255,.7);}
+.ticker{background:var(--brown);overflow:hidden;white-space:nowrap;padding:9px 0;z-index:200;position:relative;border-bottom:2px solid var(--brown-lt);}
+.ticker-inner{display:inline-block;animation:ticker 28s linear infinite;font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.14em;color:var(--yellow);}
+.ticker-inner span{margin:0 36px;color:rgba(255,255,255,.5);}
 @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* ══════════════════════════════════════════
-   NAV — desktop + hamburger mobile
-══════════════════════════════════════════ */
-nav{
-  background:var(--black);
-  border-bottom:3px solid var(--yellow);
-  position:sticky;top:0;z-index:900;
-}
-.nav-wrap{
-  max-width:1200px;margin:0 auto;
-  display:flex;align-items:center;
-  justify-content:space-between;
-  padding:0 20px;
-  gap:12px;
-}
-.nav-logo{
-  font-family:'Permanent Marker',cursive;
-  font-size:1.4rem;color:var(--yellow);
-  text-decoration:none;
-  padding:14px 0;
-  text-shadow:2px 2px 0 var(--red);
-  white-space:nowrap;flex-shrink:0;
-}
-
-/* desktop tabs */
-.nav-tabs{
-  display:flex;gap:0;
-  overflow-x:auto;
-  scrollbar-width:none;
-}
+nav{background:var(--brown-dk);border-bottom:3px solid var(--yellow);position:sticky;top:0;z-index:900;}
+.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 20px;gap:12px;}
+.nav-logo{display:flex;align-items:center;padding:8px 0;text-decoration:none;flex-shrink:0;font-family:'Permanent Marker',cursive;font-size:1.5rem;color:var(--yellow);text-shadow:2px 2px 0 var(--brown-md);}
+.nav-tabs{display:flex;gap:0;overflow-x:auto;scrollbar-width:none;}
 .nav-tabs::-webkit-scrollbar{display:none;}
-.tab-btn{
-  background:none;border:none;
-  font-family:'Bebas Neue',cursive;
-  font-size:1rem;letter-spacing:.1em;
-  color:rgba(245,245,240,.55);
-  padding:18px 16px;
-  cursor:pointer;
-  border-bottom:3px solid transparent;
-  transition:color .2s,border-color .2s;
-  white-space:nowrap;
-  flex-shrink:0;
-}
+.tab-btn{background:none;border:none;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;color:rgba(245,245,240,.55);padding:18px 16px;cursor:pointer;border-bottom:3px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;flex-shrink:0;}
 .tab-btn:hover{color:var(--yellow);}
 .tab-btn.active{color:var(--yellow);border-bottom-color:var(--yellow);}
-
-.nav-order{
-  background:var(--red);color:#fff;
-  font-family:'Bebas Neue',cursive;
-  font-size:.9rem;letter-spacing:.1em;
-  padding:9px 16px;border:none;border-radius:2px;
-  cursor:pointer;text-decoration:none;
-  display:inline-block;white-space:nowrap;flex-shrink:0;
-  transition:background .2s;
-}
+.nav-order{background:var(--red);color:#fff;font-family:'Bebas Neue',cursive;font-size:.9rem;letter-spacing:.1em;padding:9px 16px;border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;white-space:nowrap;flex-shrink:0;transition:background .2s;}
 .nav-order:hover{background:var(--red-dk);}
-
-/* hamburger button — hidden on desktop */
-.hamburger{
-  display:none;
-  background:none;border:none;
-  cursor:pointer;padding:8px;
-  flex-direction:column;gap:5px;
-  flex-shrink:0;
-}
-.hamburger span{
-  display:block;width:24px;height:2px;
-  background:var(--yellow);
-  transition:transform .3s,opacity .3s;
-}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;flex-shrink:0;}
+.hamburger span{display:block;width:24px;height:2px;background:var(--yellow);transition:transform .3s,opacity .3s;}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-
-/* mobile drawer */
-.mobile-menu{
-  display:none;
-  position:fixed;top:0;left:0;right:0;bottom:0;
-  background:var(--black);
-  z-index:800;
-  flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:8px;
-  padding:80px 24px 40px;
-}
+.mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:var(--brown-dk);z-index:800;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:80px 24px 40px;}
 .mobile-menu.open{display:flex;}
-.mobile-menu .mob-tab{
-  background:none;border:none;
-  font-family:'Black Han Sans',sans-serif;
-  font-size:2.2rem;color:rgba(245,245,240,.7);
-  cursor:pointer;padding:10px 0;
-  width:100%;text-align:center;
-  border-bottom:1px solid rgba(255,255,255,.07);
-  transition:color .2s;
-}
+.mobile-menu .mob-tab{background:none;border:none;font-family:'Black Han Sans',sans-serif;font-size:2.2rem;color:rgba(245,245,240,.7);cursor:pointer;padding:10px 0;width:100%;text-align:center;border-bottom:1px solid rgba(255,255,255,.07);transition:color .2s;}
 .mobile-menu .mob-tab:hover,.mobile-menu .mob-tab.active{color:var(--yellow);}
-.mobile-menu .mob-order{
-  margin-top:20px;
-  background:var(--red);color:#fff;
-  font-family:'Bebas Neue',cursive;
-  font-size:1.2rem;letter-spacing:.12em;
-  padding:16px 40px;text-decoration:none;
-  display:inline-block;border-radius:2px;
-  width:100%;text-align:center;
-}
+.mobile-menu .mob-order{margin-top:20px;background:var(--red);color:#fff;font-family:'Bebas Neue',cursive;font-size:1.2rem;letter-spacing:.12em;padding:16px 40px;text-decoration:none;display:inline-block;border-radius:2px;width:100%;text-align:center;}
 
-/* ══════════════════════════════════════════
-   PAGE SYSTEM
-══════════════════════════════════════════ */
 .page{display:none;}
 .page.active{display:block;}
 
-/* ══════════════════════════════════════════
-   SHARED HELPERS
-══════════════════════════════════════════ */
-.section-eyebrow{
-  font-family:'Bebas Neue',cursive;
-  font-size:.82rem;letter-spacing:.28em;
-  color:var(--green-lt);
-  margin-bottom:10px;
-  display:flex;align-items:center;gap:10px;
-}
-.section-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--green-lt);}
-.section-h2{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(1.8rem,6vw,3.6rem);
-  line-height:1;color:var(--white);margin-bottom:32px;
-}
+.section-eyebrow{font-family:'Bebas Neue',cursive;font-size:.82rem;letter-spacing:.28em;color:var(--brown-warm);margin-bottom:10px;display:flex;align-items:center;gap:10px;}
+.section-eyebrow::before{content:'';display:block;width:28px;height:2px;background:var(--brown-warm);}
+.section-h2{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.8rem,6vw,3.6rem);line-height:1;color:var(--white);margin-bottom:32px;}
 .section-h2 em{font-style:normal;color:var(--yellow);}
 .section-h2 .red{color:var(--red);}
-.btn-yellow{
-  background:var(--yellow);color:var(--black);
-  font-family:'Bebas Neue',cursive;
-  font-size:1.05rem;letter-spacing:.12em;
-  padding:13px 28px;border:none;border-radius:2px;
-  cursor:pointer;text-decoration:none;display:inline-block;
-  transition:background .2s,transform .15s;
-  -webkit-appearance:none;
-}
+.btn-yellow{background:var(--yellow);color:var(--brown-dk);font-family:'Bebas Neue',cursive;font-size:1.05rem;letter-spacing:.12em;padding:13px 28px;border:none;border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:background .2s;-webkit-appearance:none;}
 .btn-yellow:hover{background:var(--yellow-lt);}
-.btn-outline-white{
-  background:transparent;color:var(--white);
-  font-family:'Bebas Neue',cursive;
-  font-size:1.05rem;letter-spacing:.12em;
-  padding:12px 28px;
-  border:2px solid rgba(245,245,240,.35);
-  border-radius:2px;
-  cursor:pointer;text-decoration:none;display:inline-block;
-  transition:border-color .2s,color .2s;
-}
+.btn-outline-white{background:transparent;color:var(--white);font-family:'Bebas Neue',cursive;font-size:1.05rem;letter-spacing:.12em;padding:12px 28px;border:2px solid rgba(245,245,240,.35);border-radius:2px;cursor:pointer;text-decoration:none;display:inline-block;transition:border-color .2s,color .2s;}
 .btn-outline-white:hover{border-color:var(--yellow);color:var(--yellow);}
 
-/* ══════════════════════════════════════════
-   ██ HOME
-══════════════════════════════════════════ */
-.hero{
-  min-height:100svh;
-  background:var(--black);
-  display:flex;align-items:center;
-  position:relative;overflow:hidden;
-  padding:60px 20px 48px;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;
-  background:repeating-linear-gradient(
-    -45deg,transparent,transparent 60px,
-    rgba(255,208,0,.03) 60px,rgba(255,208,0,.03) 62px
-  );
-}
-.hero-colorblock{
-  position:absolute;right:0;top:0;bottom:0;width:40%;
-  background:var(--red);
-  clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);
-  z-index:0;
-}
-.hero-colorblock::after{
-  content:'';position:absolute;inset:0;
-  background:url('smash-burger.png') center/cover no-repeat;
-  mix-blend-mode:multiply;opacity:.5;
-}
-.hero-inner{
-  max-width:1200px;margin:0 auto;width:100%;
-  position:relative;z-index:2;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:32px;align-items:center;
-}
-.hero-eyebrow{
-  font-family:'Bebas Neue',cursive;
-  font-size:.82rem;letter-spacing:.28em;color:var(--green-lt);
-  margin-bottom:14px;display:flex;align-items:center;gap:10px;
-}
-.hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--green-lt);}
-.hero-h1{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(3.2rem,10vw,8rem);
-  line-height:.9;color:var(--white);margin-bottom:8px;
-}
+/* HERO */
+.hero{min-height:100svh;background:var(--brown-dk);display:flex;align-items:center;position:relative;overflow:hidden;padding:60px 20px 48px;}
+.hero::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(-45deg,transparent,transparent 60px,rgba(193,122,69,.05) 60px,rgba(193,122,69,.05) 62px);}
+.hero-colorblock{position:absolute;right:0;top:0;bottom:0;width:40%;background:var(--brown);clip-path:polygon(14% 0,100% 0,100% 100%,0 100%);z-index:0;}
+.hero-colorblock::after{content:'';position:absolute;inset:0;background:url('smash-burger.png') center/cover no-repeat;mix-blend-mode:multiply;opacity:.4;}
+.hero-inner{max-width:1200px;margin:0 auto;width:100%;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;}
+.hero-eyebrow{font-family:'Bebas Neue',cursive;font-size:.82rem;letter-spacing:.28em;color:var(--brown-warm);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+.hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--brown-warm);}
+.hero-logo-big{display:flex;justify-content:flex-start;margin-bottom:20px;}
+.hero-logo-big img{width:180px;height:180px;object-fit:contain;filter:drop-shadow(0 4px 20px rgba(0,0,0,.5));}
+.hero-h1{font-family:'Black Han Sans',sans-serif;font-size:clamp(2.8rem,9vw,7rem);line-height:.9;color:var(--white);margin-bottom:8px;}
 .hero-h1 .red{color:var(--red);}
 .hero-h1 .yellow{color:var(--yellow);}
-.hero-sub{
-  font-size:1rem;color:rgba(245,245,240,.7);
-  line-height:1.7;max-width:400px;margin:18px 0 32px;
-}
+.hero-sub{font-size:1rem;color:rgba(245,245,240,.7);line-height:1.7;max-width:400px;margin:18px 0 32px;}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
 .hero-stat-stack{display:flex;flex-direction:column;gap:10px;width:100%;}
-.hero-stat{
-  background:rgba(255,255,255,.05);
-  border:1px solid rgba(255,208,0,.2);
-  border-left:4px solid var(--yellow);
-  padding:16px 18px;border-radius:2px;
-}
+.hero-stat{background:rgba(107,58,31,.3);border:1px solid rgba(193,122,69,.3);border-left:4px solid var(--yellow);padding:16px 18px;border-radius:2px;}
 .hero-stat:nth-child(2){border-left-color:var(--red);}
-.hero-stat:nth-child(3){border-left-color:var(--green-lt);}
-.hero-stat .big{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:2.2rem;color:var(--yellow);
-}
+.hero-stat:nth-child(3){border-left-color:var(--brown-warm);}
+.hero-stat .big{font-family:'Black Han Sans',sans-serif;font-size:2.2rem;color:var(--yellow);}
 .hero-stat:nth-child(2) .big{color:var(--red);}
-.hero-stat:nth-child(3) .big{color:var(--green-lt);}
+.hero-stat:nth-child(3) .big{color:var(--brown-warm);}
 .hero-stat .lbl{font-size:.78rem;color:rgba(245,245,240,.55);letter-spacing:.08em;text-transform:uppercase;}
 
-/* social strip */
-.social-strip{
-  background:var(--yellow);
-  padding:14px 20px;
-  display:flex;align-items:center;justify-content:center;
-  gap:20px;flex-wrap:wrap;
-}
-.social-strip a{
-  color:var(--black);
-  font-family:'Bebas Neue',cursive;
-  font-size:.92rem;letter-spacing:.12em;
-  text-decoration:none;display:flex;align-items:center;gap:6px;
-  transition:color .2s;
-}
-.social-strip a:hover{color:var(--red-dk);}
+.social-strip{background:var(--yellow);padding:14px 20px;display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;}
+.social-strip a{color:var(--brown-dk);font-family:'Bebas Neue',cursive;font-size:.92rem;letter-spacing:.12em;text-decoration:none;display:flex;align-items:center;gap:6px;transition:color .2s;}
+.social-strip a:hover{color:var(--brown);}
 .social-strip .div{color:rgba(0,0,0,.25);}
 
-/* features grid */
 .home-features{padding:64px 20px;max-width:1200px;margin:0 auto;}
-.feat-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:4px;
-}
-.feat-card{
-  position:relative;overflow:hidden;
-  aspect-ratio:3/4;cursor:pointer;
-}
-.feat-card img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .5s;filter:brightness(.65) saturate(1.1);
-}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;}
+.feat-card{position:relative;overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--brown);}
+.feat-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s;filter:brightness(.65) saturate(1.1);}
 .feat-card:hover img{transform:scale(1.07);filter:brightness(.45) saturate(1.3);}
-.feat-card-overlay{
-  position:absolute;inset:0;
-  background:linear-gradient(0deg,rgba(0,0,0,.88) 0%,transparent 55%);
-  display:flex;flex-direction:column;justify-content:flex-end;
-  padding:18px;
-}
-.feat-card-tag{
-  font-family:'Bebas Neue',cursive;font-size:.72rem;
-  letter-spacing:.2em;color:var(--yellow);margin-bottom:4px;
-}
-.feat-card-name{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(1.1rem,3vw,1.6rem);color:var(--white);line-height:1;
-}
-.feat-card-hover{
-  position:absolute;inset:0;
-  background:rgba(232,21,27,.9);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:10px;opacity:0;transition:opacity .3s;padding:18px;text-align:center;
-}
+.feat-card-overlay{position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,8,2,.92) 0%,transparent 55%);display:flex;flex-direction:column;justify-content:flex-end;padding:18px;}
+.feat-card-tag{font-family:'Bebas Neue',cursive;font-size:.72rem;letter-spacing:.2em;color:var(--brown-warm);margin-bottom:4px;}
+.feat-card-name{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.1rem,3vw,1.6rem);color:var(--white);line-height:1;}
+.feat-card-hover{position:absolute;inset:0;background:rgba(107,58,31,.93);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;opacity:0;transition:opacity .3s;padding:18px;text-align:center;}
 .feat-card:hover .feat-card-hover{opacity:1;}
 .feat-card-hover p{font-size:.88rem;color:#fff;line-height:1.5;}
-.feat-card-hover .see-more{
-  font-family:'Bebas Neue',cursive;letter-spacing:.15em;font-size:.88rem;
-  color:var(--yellow);border:1px solid var(--yellow);
-  padding:8px 16px;cursor:pointer;background:none;
-  transition:background .2s,color .2s;
-}
-.feat-card-hover .see-more:hover{background:var(--yellow);color:var(--black);}
+.feat-card-hover .see-more{font-family:'Bebas Neue',cursive;letter-spacing:.15em;font-size:.88rem;color:var(--yellow);border:1px solid var(--yellow);padding:8px 16px;cursor:pointer;background:none;transition:background .2s,color .2s;}
+.feat-card-hover .see-more:hover{background:var(--yellow);color:var(--brown-dk);}
 
-/* big quote */
-.big-quote{
-  background:var(--red);padding:60px 20px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.big-quote::before{
-  content:'"';font-family:'Black Han Sans',sans-serif;
-  font-size:20rem;color:rgba(0,0,0,.1);
-  position:absolute;top:-60px;left:50%;transform:translateX(-50%);
-  line-height:1;pointer-events:none;
-}
-.big-quote blockquote{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(1.4rem,4.5vw,2.8rem);
-  color:var(--white);max-width:800px;margin:0 auto 16px;
-  line-height:1.2;position:relative;z-index:1;
-}
-.big-quote cite{
-  font-family:'Bebas Neue',cursive;font-size:.88rem;
-  letter-spacing:.2em;color:var(--yellow);font-style:normal;
-}
+.big-quote{background:var(--brown);padding:60px 20px;text-align:center;position:relative;overflow:hidden;border-top:4px solid var(--yellow);border-bottom:4px solid var(--yellow);}
+.big-quote::before{content:'"';font-family:'Black Han Sans',sans-serif;font-size:20rem;color:rgba(0,0,0,.15);position:absolute;top:-60px;left:50%;transform:translateX(-50%);line-height:1;pointer-events:none;}
+.big-quote blockquote{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.4rem,4.5vw,2.8rem);color:var(--white);max-width:800px;margin:0 auto 16px;line-height:1.2;position:relative;z-index:1;}
+.big-quote cite{font-family:'Bebas Neue',cursive;font-size:.88rem;letter-spacing:.2em;color:var(--yellow);font-style:normal;}
 
-/* order strip */
-.order-strip{
-  background:var(--green);padding:44px 20px;
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:20px;
-}
-.order-strip-text h3{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(1.5rem,4vw,2.6rem);color:var(--white);line-height:1;
-}
+.order-strip{background:var(--green);padding:44px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.order-strip-text h3{font-family:'Black Han Sans',sans-serif;font-size:clamp(1.5rem,4vw,2.6rem);color:var(--white);line-height:1;}
 .order-strip-text p{color:rgba(255,255,255,.7);font-size:.95rem;margin-top:6px;}
 .order-strip-btns{display:flex;gap:12px;flex-wrap:wrap;}
 
-/* ══════════════════════════════════════════
-   ██ MENU
-══════════════════════════════════════════ */
-.menu-hero{
-  background:var(--gray);padding:60px 20px 44px;text-align:center;
-  border-bottom:4px solid var(--yellow);position:relative;overflow:hidden;
-}
-.menu-hero::after{
-  content:'MENU';font-family:'Black Han Sans',sans-serif;font-size:12rem;
-  color:rgba(255,208,0,.04);position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
-}
-.menu-hero h1{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(2.6rem,9vw,5.5rem);color:var(--white);position:relative;z-index:1;
-}
+/* MENU */
+.menu-hero{background:var(--brown);padding:60px 20px 44px;text-align:center;border-bottom:4px solid var(--yellow);position:relative;overflow:hidden;}
+.menu-hero::after{content:'MENU';font-family:'Black Han Sans',sans-serif;font-size:12rem;color:rgba(255,208,0,.04);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
+.menu-hero h1{font-family:'Black Han Sans',sans-serif;font-size:clamp(2.6rem,9vw,5.5rem);color:var(--white);position:relative;z-index:1;}
 .menu-hero h1 span{color:var(--yellow);}
 .menu-hero p{color:rgba(245,245,240,.6);margin-top:10px;font-size:.9rem;position:relative;z-index:1;line-height:1.6;}
-
 .menu-wrap{max-width:1100px;margin:0 auto;padding:48px 20px;}
-.menu-photo-banner{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:40px;
-}
-.menu-photo-banner img{width:100%;height:150px;object-fit:cover;filter:brightness(.8) saturate(1.2);transition:filter .3s;}
+.menu-photo-banner{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:40px;}
+.menu-photo-banner img{width:100%;height:150px;object-fit:cover;filter:brightness(.8) saturate(1.2);transition:filter .3s;background:var(--brown);}
 .menu-photo-banner img:hover{filter:brightness(1) saturate(1.4);}
-
 .menu-section{margin-bottom:48px;}
-.menu-section-title{
-  font-family:'Black Han Sans',sans-serif;font-size:1.7rem;color:var(--yellow);
-  border-bottom:2px solid var(--gray2);padding-bottom:10px;margin-bottom:20px;
-  display:flex;align-items:center;gap:10px;
-}
-.menu-section-title .icon{font-size:1.4rem;}
+.menu-section-title{font-family:'Black Han Sans',sans-serif;font-size:1.7rem;color:var(--yellow);border-bottom:2px solid var(--brown-md);padding-bottom:10px;margin-bottom:20px;display:flex;align-items:center;gap:10px;}
 .menu-items{display:grid;grid-template-columns:1fr;gap:3px;}
-.menu-item{
-  background:var(--gray2);padding:18px 20px;
-  border-left:3px solid transparent;
-  transition:border-color .2s,background .2s;
-  display:flex;justify-content:space-between;align-items:flex-start;gap:14px;
-}
-.menu-item:hover,.menu-item:active{border-left-color:var(--red);background:#222;}
-.menu-item h4{
-  font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.06em;
-  color:var(--white);margin-bottom:4px;
-}
+.menu-item{background:rgba(107,58,31,.25);border:1px solid rgba(193,122,69,.15);padding:18px 20px;border-left:3px solid transparent;transition:border-color .2s,background .2s;display:flex;justify-content:space-between;align-items:flex-start;gap:14px;}
+.menu-item:hover{border-left-color:var(--yellow);background:rgba(107,58,31,.45);}
+.menu-item h4{font-family:'Bebas Neue',cursive;font-size:1.1rem;letter-spacing:.06em;color:var(--white);margin-bottom:4px;}
 .menu-item p{font-size:.83rem;color:rgba(245,245,240,.5);line-height:1.5;}
-.menu-item .price{
-  font-family:'Black Han Sans',sans-serif;font-size:1.05rem;
-  color:var(--yellow);white-space:nowrap;flex-shrink:0;
-}
-.menu-special-badge{
-  background:var(--red);color:#fff;
-  font-family:'Bebas Neue',cursive;font-size:.68rem;letter-spacing:.1em;
-  padding:2px 7px;border-radius:2px;display:inline-block;
-  margin-left:6px;vertical-align:middle;
-}
-.menu-note{
-  background:rgba(255,208,0,.07);
-  border-left:3px solid var(--yellow);
-  padding:10px 14px;margin-bottom:14px;
-  font-size:.82rem;color:rgba(245,245,240,.6);line-height:1.6;
-  border-radius:0 2px 2px 0;
-}
+.menu-item .price{font-family:'Black Han Sans',sans-serif;font-size:1.05rem;color:var(--yellow);white-space:nowrap;flex-shrink:0;}
+.menu-special-badge{background:var(--red);color:#fff;font-family:'Bebas Neue',cursive;font-size:.68rem;letter-spacing:.1em;padding:2px 7px;border-radius:2px;display:inline-block;margin-left:6px;vertical-align:middle;}
+.menu-note{background:rgba(193,122,69,.12);border-left:3px solid var(--brown-warm);padding:10px 14px;margin-bottom:14px;font-size:.82rem;color:rgba(245,245,240,.6);line-height:1.6;border-radius:0 2px 2px 0;}
 .menu-note strong{color:var(--yellow);}
-.menu-online-cta{
-  background:var(--green);padding:36px 20px;text-align:center;margin-top:48px;
-}
-.menu-online-cta h3{
-  font-family:'Black Han Sans',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:10px;
-}
+.menu-online-cta{background:var(--green);padding:36px 20px;text-align:center;margin-top:48px;}
+.menu-online-cta h3{font-family:'Black Han Sans',sans-serif;font-size:1.8rem;color:var(--white);margin-bottom:10px;}
 .menu-online-cta p{color:rgba(255,255,255,.75);margin-bottom:22px;font-size:.95rem;}
 
-/* ══════════════════════════════════════════
-   ██ GALLERY
-══════════════════════════════════════════ */
-.gallery-hero{
-  background:var(--green);padding:60px 20px 100px;text-align:center;
-  clip-path:polygon(0 0,100% 0,100% 82%,0 100%);margin-bottom:-30px;
-}
-.gallery-hero h1{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(2.6rem,9vw,5.5rem);color:var(--yellow);
-}
+/* GALLERY */
+.gallery-hero{background:var(--brown-md);padding:60px 20px 100px;text-align:center;clip-path:polygon(0 0,100% 0,100% 82%,0 100%);margin-bottom:-30px;}
+.gallery-hero h1{font-family:'Black Han Sans',sans-serif;font-size:clamp(2.6rem,9vw,5.5rem);color:var(--yellow);}
 .gallery-hero p{color:rgba(255,255,255,.8);margin-top:10px;font-size:.95rem;}
 .gallery-wrap{max-width:1200px;margin:0 auto;padding:60px 20px 48px;}
-.gallery-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:4px;
-}
-.gallery-item{
-  position:relative;overflow:hidden;cursor:pointer;
-  aspect-ratio:1;
-}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;}
+.gallery-item{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:1;background:var(--brown);}
 .gallery-item.tall{aspect-ratio:2/3;}
-.gallery-item img{
-  width:100%;height:100%;object-fit:cover;
-  filter:brightness(.7) saturate(1.2);
-  transition:filter .4s,transform .5s;
-}
+.gallery-item img{width:100%;height:100%;object-fit:cover;filter:brightness(.7) saturate(1.2);transition:filter .4s,transform .5s;}
 .gallery-item:hover img{filter:brightness(1) saturate(1.5);transform:scale(1.05);}
-.gallery-item-cap{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(0deg,rgba(0,0,0,.85),transparent);
-  padding:18px 14px 12px;
-}
-.gallery-item-cap span{
-  font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.1em;color:var(--yellow);
-}
-.gallery-ig-strip{
-  background:var(--red);padding:48px 20px;text-align:center;margin-top:16px;
-}
-.gallery-ig-strip h3{
-  font-family:'Black Han Sans',sans-serif;font-size:2rem;color:var(--white);margin-bottom:10px;
-}
+.gallery-item-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(20,8,2,.9),transparent);padding:18px 14px 12px;}
+.gallery-item-cap span{font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.1em;color:var(--yellow);}
+.gallery-ig-strip{background:var(--red);padding:48px 20px;text-align:center;margin-top:16px;}
+.gallery-ig-strip h3{font-family:'Black Han Sans',sans-serif;font-size:2rem;color:var(--white);margin-bottom:10px;}
 .gallery-ig-strip p{color:rgba(255,255,255,.8);margin-bottom:22px;font-size:.95rem;}
 
-/* ══════════════════════════════════════════
-   ██ ABOUT
-══════════════════════════════════════════ */
-.about-hero{
-  background:var(--black);min-height:auto;
-  padding:64px 20px;
-  border-bottom:4px solid var(--red);
-  position:relative;overflow:hidden;
-}
-.about-hero::before{
-  content:'NANA B';font-family:'Black Han Sans',sans-serif;font-size:10rem;
-  color:rgba(232,21,27,.06);position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
-}
-.about-hero-inner{
-  max-width:1200px;margin:0 auto;position:relative;z-index:1;
-  display:flex;flex-direction:column;gap:32px;
-}
-.about-hero h1{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(2.4rem,8vw,5rem);color:var(--white);line-height:.95;margin-bottom:20px;
-}
-.about-hero h1 em{font-style:normal;color:var(--red);}
+/* ABOUT */
+.about-hero{background:var(--brown-dk);padding:64px 20px;border-bottom:4px solid var(--brown-lt);position:relative;overflow:hidden;}
+.about-hero::before{content:'NANA B';font-family:'Black Han Sans',sans-serif;font-size:10rem;color:rgba(193,122,69,.07);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
+.about-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;display:flex;flex-direction:column;gap:32px;}
+.about-hero h1{font-family:'Black Han Sans',sans-serif;font-size:clamp(2.4rem,8vw,5rem);color:var(--white);line-height:.95;margin-bottom:20px;}
+.about-hero h1 em{font-style:normal;color:var(--brown-warm);}
 .about-hero p{color:rgba(245,245,240,.7);line-height:1.8;font-size:1rem;margin-bottom:14px;}
-.about-colorbox{
-  background:var(--yellow);padding:28px 24px;
-  font-family:'Permanent Marker',cursive;font-size:1.3rem;color:var(--black);line-height:1.4;
-  transform:rotate(-1.2deg);box-shadow:6px 6px 0 var(--red);
-  margin:8px 0;
-}
-.about-values{background:var(--gray);padding:60px 20px;}
+.about-colorbox{background:var(--yellow);padding:28px 24px;font-family:'Permanent Marker',cursive;font-size:1.3rem;color:var(--brown-dk);line-height:1.4;transform:rotate(-1.2deg);box-shadow:6px 6px 0 var(--brown);margin:8px 0;}
+.about-values{background:var(--brown);padding:60px 20px;}
 .about-values-inner{max-width:1100px;margin:0 auto;}
-.values-grid{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:32px;
-}
-.value-card{
-  background:var(--gray2);padding:24px 20px;
-  border-top:4px solid transparent;transition:border-color .2s,background .2s;
-}
+.values-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-top:32px;}
+.value-card{background:rgba(59,31,14,.5);border:1px solid rgba(193,122,69,.2);padding:24px 20px;border-top:4px solid transparent;}
 .value-card:nth-child(1){border-top-color:var(--red);}
 .value-card:nth-child(2){border-top-color:var(--yellow);}
-.value-card:nth-child(3){border-top-color:var(--green-lt);}
-.value-card:nth-child(4){border-top-color:var(--red);}
+.value-card:nth-child(3){border-top-color:var(--brown-warm);}
+.value-card:nth-child(4){border-top-color:var(--green-lt);}
 .value-card .vc-icon{font-size:1.8rem;margin-bottom:10px;}
-.value-card h3{
-  font-family:'Black Han Sans',sans-serif;font-size:1.15rem;color:var(--white);margin-bottom:8px;
-}
+.value-card h3{font-family:'Black Han Sans',sans-serif;font-size:1.15rem;color:var(--white);margin-bottom:8px;}
 .value-card p{font-size:.83rem;color:rgba(245,245,240,.5);line-height:1.6;}
-
-.about-owners{
-  padding:60px 20px;max-width:1100px;margin:0 auto;
-  display:flex;flex-direction:column;gap:32px;
-}
-.owner-block h2{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(2rem,6vw,3.2rem);color:var(--white);line-height:1;margin-bottom:18px;
-}
-.owner-block h2 em{font-style:normal;color:var(--green-lt);}
+.about-owners{padding:60px 20px;max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:32px;}
+.owner-block h2{font-family:'Black Han Sans',sans-serif;font-size:clamp(2rem,6vw,3.2rem);color:var(--white);line-height:1;margin-bottom:18px;}
+.owner-block h2 em{font-style:normal;color:var(--brown-warm);}
 .owner-block p{color:rgba(245,245,240,.7);line-height:1.8;font-size:.98rem;margin-bottom:12px;}
-.owner-img-stack{position:relative;}
-.owner-img-stack .img-main{
-  width:100%;aspect-ratio:16/9;object-fit:cover;filter:brightness(.8) saturate(1.1);
-}
+.owner-img-stack .img-main{width:100%;aspect-ratio:16/9;object-fit:cover;filter:brightness(.8) saturate(1.1);background:var(--brown);}
 
-/* ══════════════════════════════════════════
-   ██ CONNECT / VISIT
-══════════════════════════════════════════ */
-.connect-hero{
-  background:var(--yellow);padding:60px 20px 100px;text-align:center;
-  clip-path:polygon(0 0,100% 0,100% 85%,0 100%);margin-bottom:-30px;
-}
-.connect-hero h1{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(2.6rem,9vw,5.5rem);color:var(--black);
-}
-.connect-hero p{color:rgba(0,0,0,.65);font-size:.95rem;margin-top:8px;}
+/* CONNECT */
+.connect-hero{background:var(--yellow);padding:60px 20px 100px;text-align:center;clip-path:polygon(0 0,100% 0,100% 85%,0 100%);margin-bottom:-30px;}
+.connect-hero h1{font-family:'Black Han Sans',sans-serif;font-size:clamp(2.6rem,9vw,5.5rem);color:var(--brown-dk);}
+.connect-hero p{color:rgba(59,31,14,.7);font-size:.95rem;margin-top:8px;}
 .connect-wrap{max-width:1100px;margin:0 auto;padding:60px 20px;}
-.connect-grid{
-  display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:48px;
-}
-.info-card{background:var(--gray2);padding:28px;border-bottom:4px solid var(--yellow);}
-.info-card h3{
-  font-family:'Black Han Sans',sans-serif;font-size:1.3rem;color:var(--yellow);margin-bottom:14px;
-}
-.info-card p,.info-card a{
-  color:rgba(245,245,240,.75);font-size:.95rem;line-height:1.7;text-decoration:none;display:block;
-}
+.connect-grid{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:48px;}
+.info-card{background:rgba(107,58,31,.3);border:1px solid rgba(193,122,69,.2);padding:28px;border-bottom:4px solid var(--yellow);}
+.info-card h3{font-family:'Black Han Sans',sans-serif;font-size:1.3rem;color:var(--yellow);margin-bottom:14px;}
+.info-card p,.info-card a{color:rgba(245,245,240,.75);font-size:.95rem;line-height:1.7;text-decoration:none;display:block;}
 .info-card a:hover{color:var(--yellow);}
-.hours-row{
-  display:flex;justify-content:space-between;padding:8px 0;
-  border-bottom:1px solid rgba(255,255,255,.07);font-size:.88rem;
-}
+.hours-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid rgba(193,122,69,.15);font-size:.88rem;}
 .hours-row .day{color:var(--white);font-weight:700;}
 .hours-row .time{color:rgba(245,245,240,.55);}
 .hours-row.closed .time{color:var(--red);}
-.platform-links{
-  display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:48px;
-}
-.platform-card{
-  padding:28px 16px;text-align:center;text-decoration:none;display:block;
-  transition:transform .2s,opacity .2s;position:relative;overflow:hidden;
-}
-.platform-card:hover,.platform-card:active{transform:translateY(-3px);opacity:.9;}
+.platform-links{display:grid;grid-template-columns:repeat(2,1fr);gap:4px;margin-bottom:48px;}
+.platform-card{padding:28px 16px;text-align:center;text-decoration:none;display:block;transition:transform .2s,opacity .2s;}
+.platform-card:hover{transform:translateY(-3px);opacity:.9;}
 .platform-card.fb{background:#1877F2;}
 .platform-card.ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
 .platform-card.yelp{background:#D32323;}
 .platform-card.order{background:var(--green);}
 .platform-card.map{background:#4285F4;}
 .platform-card .plat-icon{font-size:2rem;display:block;margin-bottom:10px;}
-.platform-card h4{
-  font-family:'Black Han Sans',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:4px;
-}
+.platform-card h4{font-family:'Black Han Sans',sans-serif;font-size:1.05rem;color:#fff;margin-bottom:4px;}
 .platform-card p{font-size:.78rem;color:rgba(255,255,255,.75);}
-.map-embed{
-  width:100%;height:280px;background:var(--gray2);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  gap:14px;text-align:center;
-  border:2px dashed rgba(255,208,0,.2);border-radius:2px;
-}
+.map-embed{width:100%;height:280px;background:rgba(107,58,31,.3);border:2px dashed rgba(193,122,69,.3);border-radius:2px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;}
 .map-embed .map-icon{font-size:3rem;}
 .map-embed p{color:rgba(245,245,240,.6);font-size:.88rem;line-height:1.6;}
-.map-embed a{
-  background:var(--yellow);color:var(--black);
-  font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;
-  padding:12px 26px;text-decoration:none;display:inline-block;
-}
+.map-embed a{background:var(--yellow);color:var(--brown-dk);font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;padding:12px 26px;text-decoration:none;display:inline-block;}
 
-/* ══════════════════════════════════════════
-   ██ ORDER PAGE
-══════════════════════════════════════════ */
-.order-page-hero{
-  background:var(--red);padding:70px 20px;text-align:center;
-  position:relative;overflow:hidden;
-}
-.order-page-hero::before{
-  content:'ORDER';font-family:'Black Han Sans',sans-serif;font-size:12rem;
-  color:rgba(0,0,0,.1);position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;
-}
-.order-page-hero h1{
-  font-family:'Black Han Sans',sans-serif;
-  font-size:clamp(3rem,10vw,6rem);color:var(--yellow);position:relative;z-index:1;
-}
-.order-page-hero p{
-  color:rgba(255,255,255,.85);font-size:1rem;margin-top:12px;
-  position:relative;z-index:1;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6;
-}
+/* ORDER */
+.order-page-hero{background:var(--brown);padding:70px 20px;text-align:center;position:relative;overflow:hidden;border-bottom:4px solid var(--yellow);}
+.order-page-hero::before{content:'ORDER';font-family:'Black Han Sans',sans-serif;font-size:12rem;color:rgba(0,0,0,.1);position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;}
+.order-page-hero h1{font-family:'Black Han Sans',sans-serif;font-size:clamp(3rem,10vw,6rem);color:var(--yellow);position:relative;z-index:1;}
+.order-page-hero p{color:rgba(255,255,255,.85);font-size:1rem;margin-top:12px;position:relative;z-index:1;max-width:480px;margin-left:auto;margin-right:auto;line-height:1.6;}
 .order-wrap{max-width:900px;margin:0 auto;padding:60px 20px;}
-.order-options{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:48px;}
-.order-option{
-  background:var(--gray2);padding:36px 24px;text-align:center;
-  border:2px solid transparent;transition:border-color .2s;
-  cursor:pointer;text-decoration:none;display:block;
-}
-.order-option:hover,.order-option:active{border-color:var(--yellow);}
+.order-option{background:rgba(107,58,31,.3);border:2px solid rgba(193,122,69,.2);padding:36px 24px;text-align:center;transition:border-color .2s;cursor:pointer;text-decoration:none;display:block;max-width:480px;margin:0 auto 48px;}
+.order-option:hover{border-color:var(--yellow);}
 .order-option .oo-icon{font-size:2.6rem;display:block;margin-bottom:14px;}
-.order-option h3{
-  font-family:'Black Han Sans',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:8px;
-}
+.order-option h3{font-family:'Black Han Sans',sans-serif;font-size:1.5rem;color:var(--white);margin-bottom:8px;}
 .order-option p{color:rgba(245,245,240,.55);font-size:.88rem;line-height:1.6;margin-bottom:18px;}
-.order-option .oo-btn{
-  background:var(--yellow);color:var(--black);
-  font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;
-  padding:10px 22px;display:inline-block;
-}
-.order-option.phone .oo-btn{background:var(--green);color:#fff;}
-.order-note{
-  background:rgba(255,208,0,.08);border:1px solid rgba(255,208,0,.2);
-  padding:20px 24px;margin-bottom:36px;border-radius:2px;
-}
+.order-option .oo-btn{background:var(--yellow);color:var(--brown-dk);font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.12em;padding:10px 22px;display:inline-block;}
+.order-note{background:rgba(193,122,69,.1);border:1px solid rgba(193,122,69,.25);padding:20px 24px;margin-bottom:36px;border-radius:2px;}
 .order-note p{color:rgba(245,245,240,.7);font-size:.88rem;line-height:1.7;}
 .order-note strong{color:var(--yellow);}
 
-/* ══════════════════════════════════════════
-   STICKY MOBILE ORDER BAR
-══════════════════════════════════════════ */
-.sticky-order-bar{
-  display:none;
-  position:fixed;bottom:0;left:0;right:0;
-  z-index:700;
-  display:grid;grid-template-columns:1fr 1fr;
-  box-shadow:0 -4px 20px rgba(0,0,0,.5);
-}
-.sticky-order-bar a{
-  padding:16px 12px;text-align:center;text-decoration:none;
-  font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;
-  display:flex;align-items:center;justify-content:center;gap:8px;
-}
-.sticky-order-bar .sob-order{background:var(--red);color:var(--yellow);}
+/* STICKY BAR */
+.sticky-order-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:700;box-shadow:0 -4px 20px rgba(0,0,0,.5);}
+.sticky-order-bar a{padding:16px 12px;text-align:center;text-decoration:none;font-family:'Bebas Neue',cursive;font-size:1rem;letter-spacing:.1em;display:flex;align-items:center;justify-content:center;gap:8px;background:var(--brown);color:var(--yellow);border-top:2px solid var(--yellow);}
 
-/* ══════════════════════════════════════════
-   FOOTER
-══════════════════════════════════════════ */
-footer{
-  background:var(--gray);border-top:4px solid var(--red);
-  padding:44px 20px 100px; /* bottom padding for sticky bar */
-}
-.footer-inner{
-  max-width:1200px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:32px;margin-bottom:32px;
-}
-.footer-brand .f-logo{
-  font-family:'Permanent Marker',cursive;font-size:1.8rem;color:var(--yellow);
-  text-shadow:2px 2px 0 var(--red);display:block;margin-bottom:10px;
-}
-.footer-brand p{color:rgba(245,245,240,.45);font-size:.83rem;line-height:1.7;}
-.footer-col h4{
-  font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.18em;
-  color:var(--yellow);margin-bottom:12px;
-}
-.footer-col a,.footer-col p{
-  color:rgba(245,245,240,.45);font-size:.84rem;line-height:2;
-  text-decoration:none;display:block;transition:color .2s;
-}
+footer{background:var(--brown-dk);border-top:4px solid var(--brown-lt);padding:44px 20px 100px;}
+.footer-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px;}
+.footer-brand p{color:rgba(245,245,240,.45);font-size:.83rem;line-height:1.7;margin-top:10px;}
+.footer-col h4{font-family:'Bebas Neue',cursive;font-size:.95rem;letter-spacing:.18em;color:var(--brown-warm);margin-bottom:12px;}
+.footer-col a,.footer-col p{color:rgba(245,245,240,.4);font-size:.84rem;line-height:2;text-decoration:none;display:block;transition:color .2s;}
 .footer-col a:hover{color:var(--yellow);}
-.footer-bottom{
-  text-align:center;border-top:1px solid rgba(255,255,255,.07);
-  padding-top:20px;color:rgba(245,245,240,.25);font-size:.76rem;
-}
-.footer-bottom span{color:var(--red);}
+.footer-bottom{text-align:center;border-top:1px solid rgba(193,122,69,.15);padding-top:20px;color:rgba(245,245,240,.25);font-size:.76rem;}
+.footer-bottom span{color:var(--brown-warm);}
 
-/* ══════════════════════════════════════════
-   RESPONSIVE BREAKPOINTS
-══════════════════════════════════════════ */
-
-/* ── 768px and up — restore some two-col layouts */
 @media(min-width:768px){
   .hamburger{display:none !important;}
   .nav-tabs{display:flex !important;}
   .mobile-menu{display:none !important;}
   .hero-inner{grid-template-columns:1fr 1fr;}
-  .hero-colorblock{display:block;}
   .about-hero-inner{flex-direction:row;align-items:center;}
   .about-owners{flex-direction:row;align-items:center;}
   .owner-img-stack .img-main{aspect-ratio:4/5;}
   .connect-grid{grid-template-columns:1fr 1fr;}
-  .order-options{grid-template-columns:1fr 1fr;}
   .menu-items{grid-template-columns:repeat(2,1fr);}
   .menu-photo-banner{grid-template-columns:repeat(4,1fr);}
   .values-grid{grid-template-columns:repeat(4,1fr);}
@@ -737,8 +265,6 @@ footer{
   .sticky-order-bar{display:none;}
   footer{padding-bottom:44px;}
 }
-
-/* ── under 768px — hamburger nav */
 @media(max-width:767px){
   .hamburger{display:flex;}
   .nav-tabs{display:none;}
@@ -747,22 +273,20 @@ footer{
   .hero-inner{grid-template-columns:1fr;}
   .hero-stat-stack{display:none;}
   .hero{min-height:85svh;padding:48px 20px 40px;}
-  .hero-h1{font-size:clamp(3.5rem,14vw,6rem);}
+  .hero-h1{font-size:clamp(3.2rem,13vw,6rem);}
+  .hero-logo-big img{width:130px;height:130px;}
   .feat-grid{grid-template-columns:1fr 1fr;}
   .gallery-grid{grid-template-columns:1fr 1fr;}
   .order-strip{flex-direction:column;text-align:center;}
   .order-strip-btns{justify-content:center;}
   .social-strip{gap:12px;}
   .social-strip .div{display:none;}
-  .sticky-order-bar{display:grid;}
+  .sticky-order-bar{display:block;}
   footer{padding-bottom:90px;}
   .footer-inner{grid-template-columns:1fr;gap:24px;}
 }
-
-/* ── extra small phones */
 @media(max-width:380px){
   .hero-h1{font-size:3rem;}
-  .nav-logo{font-size:1.2rem;}
   .feat-card-name{font-size:1rem;}
   .values-grid{grid-template-columns:1fr;}
 }
@@ -770,7 +294,6 @@ footer{
 </head>
 <body>
 
-<!-- ══ TICKER ══════════════════════════════════ -->
 <div class="ticker">
   <div class="ticker-inner">
     🔥 EVERYTHING SCRATCH-MADE · NOTHING FROZEN <span>✦</span>
@@ -786,14 +309,9 @@ footer{
   </div>
 </div>
 
-<!-- ══ NAV ══════════════════════════════════════ -->
 <nav>
   <div class="nav-wrap">
-    <a class="nav-logo" href="#" onclick="showTab('home');return false;">
-      <img src="logo.png" alt="Nana B's Country Kitchen" style="height:42px;width:auto;display:block;">
-    </a>
-
-    <!-- desktop tabs -->
+    <a class="nav-logo" href="#" onclick="showTab('home');return false;">Nana B's </a>
     <div class="nav-tabs">
       <button class="tab-btn active" onclick="showTab('home')">Home</button>
       <button class="tab-btn" onclick="showTab('menu')">Menu</button>
@@ -802,17 +320,13 @@ footer{
       <button class="tab-btn" onclick="showTab('connect')">Visit Us</button>
       <button class="tab-btn" onclick="showTab('order')">Order</button>
     </div>
-
     <a class="nav-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order Online ↗</a>
-
-    <!-- hamburger -->
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<!-- ══ MOBILE DRAWER ════════════════════════════ -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mob-tab active" onclick="showTab('home');closeMobile()">Home</button>
   <button class="mob-tab" onclick="showTab('menu');closeMobile()">Menu</button>
@@ -823,46 +337,34 @@ footer{
   <a class="mob-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">Order Online on Zenfoody ↗</a>
 </div>
 
-<!-- ══ STICKY MOBILE ORDER BAR ═════════════════ -->
-<div class="sticky-order-bar" style="grid-template-columns:1fr;">
-  <a class="sob-order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">🍽️ Order Online — Zenfoody</a>
+<div class="sticky-order-bar">
+  <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">🍽️ Order Online — Zenfoody</a>
 </div>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  HOME                                   ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- HOME -->
 <div id="page-home" class="page active">
-
   <section class="hero">
     <div class="hero-colorblock"></div>
     <div class="hero-inner">
       <div class="hero-left">
+        <div class="hero-logo-big">
+          <img src="data:image/png;base64,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" alt="Nana B's Country Kitchen">
+        </div>
         <div class="hero-eyebrow">Round Rock, Texas · Est. 2025</div>
         <h1 class="hero-h1">
-          <span class="yellow">NANA</span><br>
-          <span class="red">B'S</span><br>
-          COUNTRY<br>KITCHEN
+          COUNTRY<br><span class="yellow">COMFORT</span><br><span class="red">DONE RIGHT.</span>
         </h1>
         <p class="hero-sub">Scratch-made comfort food from cherished family recipes. Bold flavors, zero shortcuts, all love.</p>
         <div class="hero-btns">
           <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order Online ↗</a>
+          <button class="btn-outline-white" onclick="showTab('menu')">See Menu</button>
         </div>
       </div>
       <div class="hero-right">
         <div class="hero-stat-stack">
-          <div class="hero-stat">
-            <div class="big">100%</div>
-            <div class="lbl">Scratch-Made · Nothing Frozen</div>
-          </div>
-          <div class="hero-stat">
-            <div class="big">0</div>
-            <div class="lbl">Frozen Ingredients. Ever.</div>
-          </div>
-          <div class="hero-stat">
-            <div class="big">∞</div>
-            <div class="lbl">Made With Love, Every Plate</div>
-          </div>
+          <div class="hero-stat"><div class="big">100%</div><div class="lbl">Scratch-Made · Nothing Frozen</div></div>
+          <div class="hero-stat"><div class="big">0</div><div class="lbl">Frozen Ingredients. Ever.</div></div>
+          <div class="hero-stat"><div class="big">∞</div><div class="lbl">Made With Love, Every Plate</div></div>
         </div>
       </div>
     </div>
@@ -883,48 +385,24 @@ footer{
     <h2 class="section-h2">Soul Food Done <em>Right.</em><br>No Shortcuts. <span class="red">No Excuses.</span></h2>
     <div class="feat-grid">
       <div class="feat-card">
-        <img src="smash-burger.png" alt="Smash Burger" onerror="this.style.background='#333'">
-        <div class="feat-card-overlay">
-          <div class="feat-card-tag">Signature</div>
-          <div class="feat-card-name">Smash Burger</div>
-        </div>
-        <div class="feat-card-hover">
-          <p>Victor's secret sauce, crispy caramelized edges, comes with fries.</p>
-          <button class="see-more" onclick="showTab('menu')">See Menu</button>
-        </div>
+        <img src="smash-burger.png" alt="Smash Burger">
+        <div class="feat-card-overlay"><div class="feat-card-tag">Signature</div><div class="feat-card-name">Smash Burger</div></div>
+        <div class="feat-card-hover"><p>Victor's secret sauce, crispy caramelized edges, comes with fries.</p><button class="see-more" onclick="showTab('menu')">See Menu</button></div>
       </div>
       <div class="feat-card">
-        <img src="fried-catfish.png" alt="Fried Catfish" onerror="this.style.background='#333'">
-        <div class="feat-card-overlay">
-          <div class="feat-card-tag">Classic</div>
-          <div class="feat-card-name">Fried Catfish</div>
-        </div>
-        <div class="feat-card-hover">
-          <p>Golden cornmeal-crusted Southern catfish fried to perfection.</p>
-          <button class="see-more" onclick="showTab('menu')">See Menu</button>
-        </div>
+        <img src="fried-catfish.png" alt="Fried Catfish">
+        <div class="feat-card-overlay"><div class="feat-card-tag">Classic</div><div class="feat-card-name">Fried Catfish</div></div>
+        <div class="feat-card-hover"><p>Golden cornmeal-crusted Southern catfish fried to perfection.</p><button class="see-more" onclick="showTab('menu')">See Menu</button></div>
       </div>
       <div class="feat-card">
-        <img src="oxtail-quesadilla.png" alt="Oxtail Quesadilla" onerror="this.style.background='#333'">
-        <div class="feat-card-overlay">
-          <div class="feat-card-tag">Specialty</div>
-          <div class="feat-card-name">Oxtail Quesadillas</div>
-        </div>
-        <div class="feat-card-hover">
-          <p>Braised oxtail stuffed quesadillas served with 2 sides. A Nana B's original.</p>
-          <button class="see-more" onclick="showTab('menu')">See Menu</button>
-        </div>
+        <img src="OxtailQuesadillas.png" alt="Oxtail Quesadilla">
+        <div class="feat-card-overlay"><div class="feat-card-tag">Specialty</div><div class="feat-card-name">Oxtail Quesadillas</div></div>
+        <div class="feat-card-hover"><p>Braised oxtail stuffed quesadillas served with 2 sides. A Nana B's original.</p><button class="see-more" onclick="showTab('menu')">See Menu</button></div>
       </div>
       <div class="feat-card">
-        <img src="banana-pudding.png" alt="Banana Pudding" onerror="this.style.background='#333'">
-        <div class="feat-card-overlay">
-          <div class="feat-card-tag">Must Try</div>
-          <div class="feat-card-name">Banana Pudding</div>
-        </div>
-        <div class="feat-card-hover">
-          <p>Keysha's mom's legendary family recipe. Worth the drive alone.</p>
-          <button class="see-more" onclick="showTab('menu')">See Menu</button>
-        </div>
+        <img src="bannanaPudding.png" alt="Banana Pudding">
+        <div class="feat-card-overlay"><div class="feat-card-tag">Must Try</div><div class="feat-card-name">Banana Pudding</div></div>
+        <div class="feat-card-hover"><p>Keysha's mom's legendary family recipe. Worth the drive alone.</p><button class="see-more" onclick="showTab('menu')">See Menu</button></div>
       </div>
     </div>
   </section>
@@ -943,28 +421,22 @@ footer{
       <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order on Zenfoody ↗</a>
     </div>
   </div>
-
 </div>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  MENU                                   ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- MENU -->
 <div id="page-menu" class="page">
   <div class="menu-hero">
     <h1>THE <span>MENU</span></h1>
     <p>Entree + 2 Sides + Cornbread · Add a drink to any meal for $2 · Order online at Zenfoody</p>
   </div>
   <div class="menu-wrap">
-
     <div class="menu-photo-banner">
-      <img src="smash-burger.png" alt="Smash Burger" onerror="this.style.background='#333'">
-      <img src="fried-catfish.png" alt="Catfish" onerror="this.style.background='#333'">
-      <img src="chicken-wings.png" alt="Wings" onerror="this.style.background='#333'">
-      <img src="banana-pudding.png" alt="Banana Pudding" onerror="this.style.background='#333'">
+      <img src="smash-burger.png" alt="Smash Burger">
+      <img src="fried-catfish.png" alt="Catfish">
+      <img src="chicken-wings.png" alt="Wings">
+      <img src="bannanaPudding.png" alt="Banana Pudding">
     </div>
 
-    <!-- ENTREES -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🍽️</span> Entrees <span style="font-size:.85rem;color:rgba(245,245,240,.45);font-family:'Cabin',sans-serif;font-weight:400;letter-spacing:0">— includes 2 sides + cornbread</span></div>
       <div class="menu-note">Add a drink to any meal for <strong>$2</strong></div>
@@ -978,17 +450,15 @@ footer{
       </div>
     </div>
 
-    <!-- BURGERS -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🍔</span> Burgers + Fries</div>
-      <div class="menu-note">All burgers come with lettuce, tomato, pickles, onion, jalapeño · Choice of mayo, mustard, or ketchup · Add chili +$2 · Add bacon +$1</div>
+      <div class="menu-note">All burgers: lettuce, tomato, pickles, onion, jalapeño · Mayo, mustard, or ketchup · Add chili +$2 · Bacon +$1</div>
       <div class="menu-items">
         <div class="menu-item"><div><h4>Smashburger</h4><p>2 thin beef patties with cheese</p></div><div class="price">$11.99</div></div>
         <div class="menu-item"><div><h4>Chicken Burger</h4><p>Fried or grilled chicken breast</p></div><div class="price">$14.99</div></div>
       </div>
     </div>
 
-    <!-- SANDWICHES -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🥪</span> Sandwiches + Fries</div>
       <div class="menu-note">Dressed with coleslaw, special mayo &amp; pickles</div>
@@ -998,7 +468,6 @@ footer{
       </div>
     </div>
 
-    <!-- WINGS -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🍗</span> Wings + Fries</div>
       <div class="menu-note">Flavors: BBQ · Buffalo · Lemon Pepper · Sweet Chili · Nana B's Signature Sweet BBQ</div>
@@ -1009,17 +478,15 @@ footer{
       </div>
     </div>
 
-    <!-- SALADS -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🥗</span> Salads</div>
-      <div class="menu-note">Shredded iceberg lettuce, tomatoes, cucumbers &amp; boiled eggs · Dressings: Balsamic Parmesan Vinaigrette · Ranch · Add grilled or fried chicken breast +$4</div>
+      <div class="menu-note">Shredded iceberg, tomatoes, cucumbers &amp; boiled eggs · Dressings: Balsamic Parmesan Vinaigrette · Ranch · Add chicken +$4</div>
       <div class="menu-items">
         <div class="menu-item"><div><h4>Entree Salad</h4><p>Full-size salad with your choice of dressing</p></div><div class="price">$8.99</div></div>
-        <div class="menu-item"><div><h4>Side Salad</h4><p>Smaller salad, perfect as a side</p></div><div class="price">$4.99</div></div>
+        <div class="menu-item"><div><h4>Side Salad</h4></div><div class="price">$4.99</div></div>
       </div>
     </div>
 
-    <!-- NANA B'S SPECIALTIES -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">⭐</span> Nana B's Specialties</div>
       <div class="menu-items">
@@ -1030,7 +497,6 @@ footer{
       </div>
     </div>
 
-    <!-- ALL THINGS CHILI -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🌶️</span> All Things Chili</div>
       <div class="menu-items">
@@ -1041,10 +507,8 @@ footer{
       </div>
     </div>
 
-    <!-- SIDES -->
     <div class="menu-section">
-      <div class="menu-section-title"><span class="icon">🫘</span> Sides</div>
-      <div class="menu-note">À la carte sides</div>
+      <div class="menu-section-title"><span class="icon">🫘</span> Sides <span style="font-size:.85rem;color:rgba(245,245,240,.45);font-family:'Cabin',sans-serif;font-weight:400;letter-spacing:0">(à la carte)</span></div>
       <div class="menu-items">
         <div class="menu-item"><div><h4>Mashed Potatoes + Gravy</h4></div><div class="price">$4.15</div></div>
         <div class="menu-item"><div><h4>Mac + Cheese</h4></div><div class="price">$4.15</div></div>
@@ -1061,7 +525,6 @@ footer{
       </div>
     </div>
 
-    <!-- KIDS -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">👦</span> Kids + Side</div>
       <div class="menu-items">
@@ -1072,7 +535,6 @@ footer{
       </div>
     </div>
 
-    <!-- DESSERTS -->
     <div class="menu-section">
       <div class="menu-section-title"><span class="icon">🍮</span> Desserts</div>
       <div class="menu-items">
@@ -1085,16 +547,13 @@ footer{
 
     <div class="menu-online-cta">
       <h3>Order Online — No Phone Orders</h3>
-      <p>Orders are placed exclusively through Zenfoody. No phone orders accepted.</p>
+      <p>Orders placed exclusively through Zenfoody. No phone orders accepted.</p>
       <a href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank" class="btn-yellow">Order on Zenfoody ↗</a>
     </div>
   </div>
 </div>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  GALLERY                                ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- GALLERY -->
 <div id="page-gallery" class="page">
   <div class="gallery-hero">
     <h1>FOOD GALLERY</h1>
@@ -1104,38 +563,18 @@ footer{
     <div class="section-eyebrow">Fresh from the Kitchen</div>
     <h2 class="section-h2">Every Dish Tells a <em>Story.</em></h2>
     <div class="gallery-grid">
-      <div class="gallery-item tall">
-        <img src="smash-burger.png" alt="Smash Burger" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Smashburger</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="fried-catfish.png" alt="Fried Catfish" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Fried Catfish</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="banana-pudding.png" alt="Banana Pudding" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Banana Pudding</span></div>
-      </div>
-      <div class="gallery-item tall">
-        <img src="oxtail-quesadilla.png" alt="Oxtail Quesadilla" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Oxtail Quesadillas</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="chicken-wings.png" alt="Wings" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Wings + Fries</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="fried-pork-chops.png" alt="Fried Pork Chops" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Fried Pork Chop</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="loaded-fries.png" alt="Loaded Fries" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Loaded Fries</span></div>
-      </div>
-      <div class="gallery-item">
-        <img src="oxtail-chimichanga.png" alt="Oxtail Chimichanga" onerror="this.style.background='#222'">
-        <div class="gallery-item-cap"><span>Oxtail Chimichanga</span></div>
-      </div>
+      <div class="gallery-item tall"><img src="smash-burger.png" alt="Smash Burger"><div class="gallery-item-cap"><span>Smashburger</span></div></div>
+      <div class="gallery-item"><img src="fried-catfish.png" alt="Fried Catfish"><div class="gallery-item-cap"><span>Fried Catfish</span></div></div>
+      <div class="gallery-item"><img src="bannanaPudding.png" alt="Banana Pudding"><div class="gallery-item-cap"><span>Banana Pudding</span></div></div>
+      <div class="gallery-item tall"><img src="OxtailQuesadillas.png" alt="Oxtail Quesadilla"><div class="gallery-item-cap"><span>Oxtail Quesadillas</span></div></div>
+      <div class="gallery-item"><img src="chicken-wings.png" alt="Wings"><div class="gallery-item-cap"><span>Wings + Fries</span></div></div>
+      <div class="gallery-item"><img src="fried-pork-chops.png" alt="Fried Pork Chops"><div class="gallery-item-cap"><span>Fried Pork Chop</span></div></div>
+      <div class="gallery-item"><img src="Chimichanga.png" alt="Chimichanga"><div class="gallery-item-cap"><span>Oxtail Chimichanga</span></div></div>
+      <div class="gallery-item"><img src="salad.png" alt="Salad"><div class="gallery-item-cap"><span>Fresh Salad</span></div></div>
+      <div class="gallery-item"><img src="Sides.png" alt="Sides"><div class="gallery-item-cap"><span>Southern Sides</span></div></div>
+      <div class="gallery-item"><img src="pound cake.png" alt="Pound Cake"><div class="gallery-item-cap"><span>Pound Cake</span></div></div>
+      <div class="gallery-item"><img src="sockCake.png" alt="Sock It To Me Cake"><div class="gallery-item-cap"><span>Sock It To Me Cake</span></div></div>
+      <div class="gallery-item"><img src="kidTenders.png" alt="Kid Tenders"><div class="gallery-item-cap"><span>Kids Tenders</span></div></div>
     </div>
   </div>
   <div class="gallery-ig-strip">
@@ -1145,10 +584,7 @@ footer{
   </div>
 </div>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  ABOUT                                  ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- ABOUT -->
 <div id="page-about" class="page">
   <div class="about-hero">
     <div class="about-hero-inner">
@@ -1159,9 +595,7 @@ footer{
         <p>Not a single ingredient comes frozen. Not a single shortcut is taken. Everything is scratch-made from treasured family recipes.</p>
       </div>
       <div>
-        <div class="about-colorbox">
-          "Come hungry, leave happy. That's the promise we make every single day we open these doors."
-        </div>
+        <div class="about-colorbox">"Come hungry, leave happy. That's the promise we make every single day we open these doors."</div>
       </div>
     </div>
   </div>
@@ -1183,20 +617,15 @@ footer{
       <p>Victor and Keysha Friar bring two family traditions under one roof. Victor brings his legendary wings recipe and signature special sauce. Keysha carries her mother's dessert legacy — especially that unforgettable banana pudding.</p>
       <p>Together they've built a place where food is a celebration of where they came from and a gift to the Round Rock community.</p>
       <p>The name "Nana B" is a tribute to both of their mothers — the women who started it all.</p>
-      <div style="margin-top:24px;">
-        <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" class="btn-yellow">Follow Our Journey ↗</a>
-      </div>
+      <div style="margin-top:24px;"><a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" class="btn-yellow">Follow Our Journey ↗</a></div>
     </div>
     <div class="owner-img-stack">
-      <img class="img-main" src="restaurant-kitchen.png" alt="Restaurant kitchen" onerror="this.style.background='#333'">
+      <img class="img-main" src="restaurant-kitchen.png" alt="Restaurant kitchen">
     </div>
   </div>
 </div>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  CONNECT / VISIT                        ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- VISIT US -->
 <div id="page-connect" class="page">
   <div class="connect-hero">
     <h1>FIND US</h1>
@@ -1205,10 +634,9 @@ footer{
   <div class="connect-wrap">
     <div class="connect-grid">
       <div class="info-card">
-        <h3>📍 Location &amp; Contact</h3>
+        <h3>📍 Location</h3>
         <p>101 Limmer Loop, Suite 100<br>Round Rock / Hutto, TX 78665</p>
-        <br>
-        <p>Dine-In · Takeout · Delivery</p>
+        <br><p>Dine-In · Takeout · Delivery</p>
       </div>
       <div class="info-card">
         <h3>🕐 Hours</h3>
@@ -1221,27 +649,15 @@ footer{
         <div class="hours-row"><span class="day">Sunday 🍛</span><span class="time">12PM – 4PM</span></div>
       </div>
     </div>
-
     <div class="section-eyebrow" style="margin-bottom:14px;">Find Us Everywhere</div>
     <h2 class="section-h2" style="margin-bottom:20px;">Connect &amp; <em>Order</em></h2>
     <div class="platform-links">
-      <a class="platform-card order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">
-        <span class="plat-icon">🍽️</span><h4>Order Online</h4><p>Full menu on Zenfoody</p>
-      </a>
-      <a class="platform-card fb" href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank">
-        <span class="plat-icon">📘</span><h4>Facebook</h4><p>Daily specials &amp; updates</p>
-      </a>
-      <a class="platform-card ig" href="https://www.instagram.com/nanabscountrykitchen/" target="_blank">
-        <span class="plat-icon">📷</span><h4>Instagram</h4><p>Food photos &amp; BTS</p>
-      </a>
-      <a class="platform-card yelp" href="https://www.yelp.com/biz/nana-bs-country-kitchen-round-rock-2" target="_blank">
-        <span class="plat-icon">⭐</span><h4>Yelp</h4><p>Reviews &amp; ratings</p>
-      </a>
-      <a class="platform-card map" href="https://maps.google.com/?q=101+Limmer+Loop+Suite+100+Hutto+TX" target="_blank">
-        <span class="plat-icon">📍</span><h4>Google Maps</h4><p>Get directions</p>
-      </a>
+      <a class="platform-card order" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank"><span class="plat-icon">🍽️</span><h4>Order Online</h4><p>Full menu on Zenfoody</p></a>
+      <a class="platform-card fb" href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank"><span class="plat-icon">📘</span><h4>Facebook</h4><p>Daily specials &amp; updates</p></a>
+      <a class="platform-card ig" href="https://www.instagram.com/nanabscountrykitchen/" target="_blank"><span class="plat-icon">📷</span><h4>Instagram</h4><p>Food photos &amp; BTS</p></a>
+      <a class="platform-card yelp" href="https://www.yelp.com/biz/nana-bs-country-kitchen-round-rock-2" target="_blank"><span class="plat-icon">⭐</span><h4>Yelp</h4><p>Reviews &amp; ratings</p></a>
+      <a class="platform-card map" href="https://maps.google.com/?q=101+Limmer+Loop+Suite+100+Hutto+TX" target="_blank"><span class="plat-icon">📍</span><h4>Google Maps</h4><p>Get directions</p></a>
     </div>
-
     <div class="map-embed">
       <div class="map-icon">📍</div>
       <p><strong style="color:var(--white)">101 Limmer Loop, Suite 100</strong><br>Round Rock / Hutto, TX 78665</p>
@@ -1250,10 +666,7 @@ footer{
   </div>
 </div>
 
-
-<!-- ╔══════════════════════════════════════════╗
-     ║  ORDER                                  ║
-     ╚══════════════════════════════════════════╝ -->
+<!-- ORDER -->
 <div id="page-order" class="page">
   <div class="order-page-hero">
     <h1>ORDER UP.</h1>
@@ -1263,15 +676,13 @@ footer{
     <div class="order-note">
       <p><strong>Daily specials change!</strong> Follow us on <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" style="color:var(--yellow)">Facebook</a> and <a href="https://www.instagram.com/nanabscountrykitchen/" target="_blank" style="color:var(--yellow)">Instagram</a> for today's menu. BBQ Saturday and Soul Food Sunday menus announced weekly.</p>
     </div>
-    <div class="order-options" style="grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto;">
-      <a class="order-option" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">
-        <span class="oo-icon">🍽️</span>
-        <h3>Order Online</h3>
-        <p>Browse our full menu and place an order through Zenfoody. Easy, fast, ready for pickup or delivery. No phone orders accepted.</p>
-        <span class="oo-btn">Order on Zenfoody ↗</span>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:16px;">
+    <a class="order-option" href="https://nanabscountrykitchen.zenfoody.com/newtemplate#/menu" target="_blank">
+      <span class="oo-icon">🍽️</span>
+      <h3>Order Online</h3>
+      <p>Browse our full menu and place an order through Zenfoody. Easy, fast, ready for pickup or delivery. No phone orders accepted.</p>
+      <span class="oo-btn">Order on Zenfoody ↗</span>
+    </a>
+    <div style="text-align:center;">
       <div class="section-eyebrow" style="justify-content:center;margin-bottom:14px;">Also Find Us On</div>
       <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
         <a href="https://www.facebook.com/NanaBsCountryKitchen/" target="_blank" class="btn-yellow">Facebook ↗</a>
@@ -1282,12 +693,10 @@ footer{
   </div>
 </div>
 
-
-<!-- ══ FOOTER ════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <img src="logo.png" alt="Nana B's Country Kitchen" style="height:56px;width:auto;display:block;margin-bottom:12px;">
+      <img src="data:image/png;base64,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" alt="Nana B's Country Kitchen" style="height:70px;width:auto;margin-bottom:10px;">
       <p>Scratch-made comfort food from cherished family recipes. Nothing frozen, nothing rushed — just honest, hearty cooking.</p>
     </div>
     <div class="footer-col">
@@ -1314,9 +723,7 @@ footer{
   </div>
 </footer>
 
-
 <script>
-// ── HAMBURGER
 const hamburger = document.getElementById('hamburger');
 const mobileMenu = document.getElementById('mobileMenu');
 hamburger.addEventListener('click', () => {
@@ -1329,8 +736,6 @@ function closeMobile() {
   mobileMenu.classList.remove('open');
   document.body.style.overflow = '';
 }
-
-// ── TAB SYSTEM
 const tabIds = ['home','menu','gallery','about','connect','order'];
 function showTab(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -1342,15 +747,7 @@ function showTab(id) {
     document.querySelectorAll('.tab-btn')[idx].classList.add('active');
     document.querySelectorAll('.mob-tab')[idx].classList.add('active');
   }
-  // scroll to top of nav
-  const navTop = document.querySelector('nav').getBoundingClientRect().top + window.scrollY;
-  window.scrollTo({top: navTop - 1, behavior: 'smooth'});
-}
-
-// ── hide cursor on touch devices
-if('ontouchstart' in window){
-  const c = document.querySelector('.cursor');
-  if(c) c.style.display = 'none';
+  window.scrollTo({top: document.querySelector('nav').getBoundingClientRect().top + window.scrollY - 1, behavior: 'smooth'});
 }
 </script>
 </body>
